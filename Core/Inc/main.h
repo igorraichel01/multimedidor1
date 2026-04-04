@@ -37,13 +37,18 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 
+void MX_GPIO_Init(void);
 void MX_GPIO_InterruptInit(void);
 void MX_DMA_Init(void);
 void MX_ADC1_Init(void);
+void MX_TIM10_Init(void);
+void MX_TIM11_Init(void);
 
 extern UART_HandleTypeDef huart1;
 extern ADC_HandleTypeDef hadc1;
 extern DMA_HandleTypeDef hdma_adc1;
+extern TIM_HandleTypeDef htim10;
+extern TIM_HandleTypeDef htim11;
 
 
 
@@ -89,7 +94,6 @@ void Error_Handler(void);
 #define Sensor4_Pin GPIO_PIN_0
 #define Sensor4_GPIO_Port GPIOB
 #define Sensor4  Sensor4_GPIO_Port,Sensor4_Pin 
-#define Sensor14 Sensor4_GPIO_Port,Sensor4_Pin 
 #define Sensor4_EXTI_IRQn EXTI0_IRQn
 #define Coluna1_Pin GPIO_PIN_1
 #define Coluna1_GPIO_Port GPIOB
@@ -107,16 +111,30 @@ void Error_Handler(void);
 #define D7_GPIO_Port GPIOB
 #define Enable_Pin GPIO_PIN_8
 #define Enable_GPIO_Port GPIOA
+#define LCD_EN_Pin Enable_Pin
+#define LCD_EN_GPIO_Port Enable_GPIO_Port
 #define R_W_Pin GPIO_PIN_9
 #define R_W_GPIO_Port GPIOA
+#define LCD_RW_Pin R_W_Pin
+#define LCD_RW_GPIO_Port R_W_GPIO_Port
 #define R_S_Pin GPIO_PIN_10
 #define R_S_GPIO_Port GPIOA
+#define LCD_RS_Pin R_S_Pin
+#define LCD_RS_GPIO_Port R_S_GPIO_Port
 #define Linha1_Pin GPIO_PIN_7
 #define Linha1_GPIO_Port GPIOB
 #define Linha2_Pin GPIO_PIN_8
 #define Linha2_GPIO_Port GPIOB
 #define Coluna4_Pin GPIO_PIN_9
 #define Coluna4_GPIO_Port GPIOB
+#define LCD_D4_Pin D4_Pin
+#define LCD_D4_GPIO_Port D4_GPIO_Port
+#define LCD_D5_Pin D5_Pin
+#define LCD_D5_GPIO_Port D5_GPIO_Port
+#define LCD_D6_Pin D6_Pin
+#define LCD_D6_GPIO_Port D6_GPIO_Port
+#define LCD_D7_Pin D7_Pin
+#define LCD_D7_GPIO_Port D7_GPIO_Port
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
