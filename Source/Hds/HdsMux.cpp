@@ -12,9 +12,9 @@
 ***********************************************************************************************/
 #include "InventTypes.h"
 #include "HdsMux.h"
-#include "Hdsgpio.h"
+#include "HdsGpio.h"
 #include "MdlSensor.h"
-#include "Main.h"
+#include "main.h"
 #include "MdlSensorAnalog.h"
 
 /*************************************************************************************************

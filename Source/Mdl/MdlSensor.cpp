@@ -21,7 +21,7 @@
  ***********************************************************************************************/
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_it.h"
-#include "Main.h"
+#include "main.h"
 #include "MdlSensor.h"
 #include "KBD2.h"
 #include <stdio.h>

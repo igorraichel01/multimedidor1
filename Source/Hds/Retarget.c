@@ -1,53 +1,81 @@
-/******************************************************************************/
-/* RETARGET.C: 'Retarget' layer for target-dependent low level functions      */
-/******************************************************************************/
-/* This file is part of the uVision/ARM development tools.                    */
-/* Copyright (c) 2005 Keil Software. All rights reserved.                     */
-/* This software may only be used under the terms of a valid, current,        */
-/* end user licence from KEIL for a compatible version of KEIL software       */
-/* development tools. Nothing else gives you the right to use this software.  */
-/******************************************************************************/
+/**
+ * Retarget.c - GCC-compatible retargeting for newlib stdio
+ *
+ * Replaces the Keil-specific retargeting with GCC/newlib-compatible
+ * implementations that redirect printf output to USART1.
+ */
 
 #include <stdio.h>
-#include <time.h>
-#include <rt_misc.h>
+#include <errno.h>
+#include <sys/stat.h>
+#include <sys/unistd.h>
 #include "stm32f4xx_hal.h"
 #include "main.h"
 
-#pragma import(__use_no_semihosting_swi)
-
-
-//extern int  sendchar(int ch);  /* in Serial.c */
-//extern int  getkey(void);      /* in Serial.c */
-//extern long timeval;           /* in Time.c   */
-
-
-struct __FILE { int handle; /* Add whatever you need here */ };
-FILE __stdout;
-FILE __stdin;
-
-
-int fputc(int ch, FILE *f) {
- // return ( HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF));
+/**
+ * @brief  Retargets the C library printf function to USART1.
+ * @param  file: file descriptor
+ * @param  ptr:  data buffer
+ * @param  len:  data length
+ * @retval number of bytes written
+ */
+int _write(int file, char *ptr, int len)
+{
+    if (file == STDOUT_FILENO || file == STDERR_FILENO)
+    {
+        HAL_UART_Transmit(&huart1, (uint8_t *)ptr, (uint16_t)len, HAL_MAX_DELAY);
+        return len;
+    }
+    errno = EBADF;
+    return -1;
 }
 
-int fgetc(FILE *f) {
-  //return (sendchar(getkey()));
-  return 0;
+int _close(int file)
+{
+    (void)file;
+    return -1;
 }
 
-
-int ferror(FILE *f) {
-  /* Your implementation of ferror */
-  return EOF;
+int _fstat(int file, struct stat *st)
+{
+    (void)file;
+    st->st_mode = S_IFCHR;
+    return 0;
 }
 
-
-void _ttywrch(int ch) {
-   HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
+int _isatty(int file)
+{
+    (void)file;
+    return 1;
 }
 
+int _lseek(int file, int ptr, int dir)
+{
+    (void)file;
+    (void)ptr;
+    (void)dir;
+    return 0;
+}
 
-void _sys_exit(int return_code) {
-  while (1);    /* endless loop */
+int _read(int file, char *ptr, int len)
+{
+    (void)file;
+    (void)ptr;
+    (void)len;
+    return 0;
+}
+
+void *_sbrk(int incr)
+{
+    extern char _end;
+    static char *heap_end = NULL;
+    char *prev_heap_end;
+
+    if (heap_end == NULL)
+    {
+        heap_end = &_end;
+    }
+    prev_heap_end = heap_end;
+    heap_end += incr;
+    return (void *)prev_heap_end;
 }

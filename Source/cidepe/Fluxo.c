@@ -2,16 +2,16 @@
  //////////////////////////////////////////////////////////////////////////
  CRONOMETRO MULTIFUNCIONAL - EQ228E -
 
- Versão do software: 1.0
+ Versï¿½o do software: 1.0
  10/02/2012
- Versão do software: 1.1
+ Versï¿½o do software: 1.1
  03/08/2012
  Incluido a funcao F12 - energia cinetica
  07/10/2013
  Alterado mensagens (MSG.h) conforme descricao abaixo:
- ->“F1   2ou5 sens” deve ser alterada para “F1   2 a 5 sens”
- ->“F1  2 or 5 sens”  deve ser alterada para “F1   2 to 5 sens”
- ->“F1   2 o 5 sens”   deve ser alterada para “F1   2 a 5 sens”
+ ->ï¿½F1   2ou5 sensï¿½ deve ser alterada para ï¿½F1   2 a 5 sensï¿½
+ ->ï¿½F1  2 or 5 sensï¿½  deve ser alterada para ï¿½F1   2 to 5 sensï¿½
+ ->ï¿½F1   2 o 5 sensï¿½   deve ser alterada para ï¿½F1   2 a 5 sensï¿½
  Fabio - 07/10/2013
 
 
@@ -21,9 +21,9 @@
  //////////////////////////////////////////////////////////////////////////
  */
 #include "InventTypes.h"
-#include "Mdlmsg.h"
+#include "MdlMSG.h"
 #include "Modo0.h"
-#include "lcd.h"
+#include "LCD.h"
 #include "KBD2.h"
 #include "MdlSensor.h"
 #include "sensores.h"
@@ -114,7 +114,7 @@ void int_sensores() {
                 SensorDigital.Result.tempos[0] = timeCounter;
                 SensorDigital.Result.tempos2[0] = timeCounter2;
 
-                //!  também calcula os valores da Func9
+                //!  tambï¿½m calcula os valores da Func9
                 SensorDigital.CalcFunc2();
             }
         }
@@ -242,7 +242,7 @@ void int_sensorS0(bool bBorda) {
         break;
 
     case 302:
-        //Só considera a borda de descida do sensor 
+        //Sï¿½ considera a borda de descida do sensor 
         if (!bBorda) {
             SensorDigital.Result.tempos[passag] = (int32) timeCounter;
             SensorDigital.Result.tempos2[passag] = timeCounter2;
@@ -255,7 +255,7 @@ void int_sensorS0(bool bBorda) {
                 //??				sensores_desab();
                 stopTimer();
                 flagEstado = 106;
-                //! usa a função 3 e 6
+                //! usa a funï¿½ï¿½o 3 e 6
                 SensorDigital.CalcFunc_3467810();
             }
         }
@@ -359,7 +359,7 @@ void int_sensorS0(bool bBorda) {
 extern float fTimeruS;
 ///////////////////////////////////////////////////////////////
 //             
-// Função chamada a cada 50us
+// Funï¿½ï¿½o chamada a cada 50us
 //	cronometragem de eventos dos sensores
 // incrementa timeCounter2 a cada 1ms
 

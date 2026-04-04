@@ -12,7 +12,7 @@
 #include "MdlEnsaioDigital.h"
 #include "Modo0.h"
 #include "HdsTeclado.h"
-#include "Mdlmsg.h"
+#include "MdlMSG.h"
 #include "MdlSensor.h"
 
 #include "KBD2.h"

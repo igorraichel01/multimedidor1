@@ -1,7 +1,7 @@
-#include "lcd.h"
+#include "LCD.h"
 #include "MdlLcd.h"
 #include "HdsMux.h"
-#include "Mdlmsg.h"
+#include "MdlMSG.h"
 #include <stdio.h>
 #include <string.h>
 

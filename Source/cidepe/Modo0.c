@@ -1,7 +1,7 @@
 #include "InventTypes.h"
-#include "lcd.h"
+#include "LCD.h"
 #include "KBD2.h"
-#include "Mdlmsg.h"
+#include "MdlMSG.h"
 #include "Modo0.h"
 #include "MdlLcd.h"
 #include "sensores.h"
@@ -626,7 +626,7 @@ bool EstadoModo0(int16 _flagEstado) {
 
     case STATE_SAVE_USB:   //Salvamento na pendrive
         Salvar_usb();
-        //Aqui analisa a tecla e decide se salva na Usb ou se segue para a funçaõ
+        //Aqui analisa a tecla e decide se salva na Usb ou se segue para a funï¿½aï¿½
         bret=false;
 
         if(tecla_valida== M_FUNC ){
@@ -652,7 +652,7 @@ bool EstadoModo0(int16 _flagEstado) {
             
         }
         else{
-            //Força a tecla para salvamento no pendrive, se não estiver inserida iria pedir pendrive e confirmação pela tecla
+            //Forï¿½a a tecla para salvamento no pendrive, se nï¿½o estiver inserida iria pedir pendrive e confirmaï¿½ï¿½o pela tecla
             flagEstado=STATE_ASK_SAVE_AT_PEN_DRIVE;
             tecla_valida= R_FUNC;
         }
@@ -764,7 +764,7 @@ bool EstadoModo0(int16 _flagEstado) {
 /*********************************************************************************************//**
  * \function     EstadoModo1
  * \details     quando chegou aqui finalizou o ensaio e analisa o que deve mostrar na tela
-                em função da escolha do usuário 
+                em funï¿½ï¿½o da escolha do usuï¿½rio 
   
  * \author     
  * \date   atualizado      29/09/2022
@@ -1232,7 +1232,7 @@ void modo2_escreveFreq_1(int16 passagem) {
 /*********************************************************************************************//**
  * \function     EstadoModo2
  * \details      Mostra no display o resultado do ensaio 
- *               agora quando chamado já calcula os resultados (antes sempre recalculava no estado da função)
+ *               agora quando chamado jï¿½ calcula os resultados (antes sempre recalculava no estado da funï¿½ï¿½o)
  *               
  *               
  *               
@@ -1755,7 +1755,7 @@ bool EstadoModo2(int16 _flagEstado) {
         break;
 
     case 750:
-        tela750();   //função 7 mostra temo s0
+        tela750();   //funï¿½ï¿½o 7 mostra temo s0
         lcd_posicaoxy(3, LCD_LINHA_1);
         //lcd_escreve_tempo(SensorDigital.Result.tempos[passag], SensorDigital.Result.tempos2[passag]);
         lcd_escreve_tempo2(SensorDigital.Result.fTempoFinal[passag]);

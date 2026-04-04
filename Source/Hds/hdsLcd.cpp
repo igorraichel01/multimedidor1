@@ -12,7 +12,7 @@
  */
 
 #include "HdsGpio.h"
-#include "HdsLCD.h"
+#include "hdsLcd.h"
 #include "specialchars.h"
 #include <stdio.h>
 #include <string.h>
@@ -54,20 +54,20 @@ void LCD_DelayUs(uint32_t ulValue) {
 
 uint32_t localvalue=ulValue*5;
     do {
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
     } while (--localvalue > 0);
 }
 

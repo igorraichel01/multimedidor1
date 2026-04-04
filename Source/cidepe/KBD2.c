@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////
 ////                             KBD2.c                                ////
 ////                 Driver para modulo teclado 16 teclas (4x4)        ////
-////         Define funções para identificar tecla pressionada e 	   ////
-////                configurações do teclado.						   ////	
+////         Define funï¿½ï¿½es para identificar tecla pressionada e 	   ////
+////                configuraï¿½ï¿½es do teclado.						   ////	
 ///////////////////////////////////////////////////////////////////////////  
 /*
 ************* Pinagem****************
@@ -28,11 +28,11 @@
 *****************************************************
 
 
-************* instruções de baixo nível *********************
+************* instruï¿½ï¿½es de baixo nï¿½vel *********************
 
 
 
-************* Funções de alto nível ****************
+************* Funï¿½ï¿½es de alto nï¿½vel ****************
 
 
 
@@ -40,7 +40,7 @@
 */
 
 #include "KBD2.h"
-#include "lcd.h"
+#include "LCD.h"
 #include "estados.h"
 #include "Modo0.h"
 #include "MdlSensor.h"
@@ -105,11 +105,11 @@ char kbd;
 
 
 ///////////////////////////////
-// função para os estados de 0 a 200
+// funï¿½ï¿½o para os estados de 0 a 200
 
 /*********************************************************************************************//**
  * \function        selecEstado
- * \details   Analisa a tecla recebida e retorna no novo estado casao seja uma das 3 teclas de função 
+ * \details   Analisa a tecla recebida e retorna no novo estado casao seja uma das 3 teclas de funï¿½ï¿½o 
 
  * \author     
  * \date         
@@ -329,7 +329,7 @@ int16 selecEstado751(char _teclado, int NumIntervalos){
    
     int16 teste;
 
-//!depende do número de intervalos precisa fazer um tratamento diferente para cada tipo de tecla
+//!depende do nï¿½mero de intervalos precisa fazer um tratamento diferente para cada tipo de tecla
     if(NumIntervalos==10)
         teste=NumIntervalos-1;
         else

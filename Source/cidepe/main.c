@@ -39,7 +39,7 @@ Co-Autor : Fabio de A. Bairros
 int Func=0;		//Definida a variavel neste momento
 				//Fabio Bairros - 22/01/2014
 
-#include "lcd.h"
+#include "LCD.h"
 #include "msg.h"
 #include "estados.h"
 #include "kbd2.h"

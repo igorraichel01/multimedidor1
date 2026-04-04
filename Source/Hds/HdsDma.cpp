@@ -1,26 +1,26 @@
 /********************************** NOME DO MODULO *******************************************//**
 *\file     HdsDma.cpp
  
-*\details    Rotina que inicia a conversão do Ad pelo DMA
-*            Salva a conversão nas variávies de leitura do AD 
+*\details    Rotina que inicia a conversï¿½o do Ad pelo DMA
+*            Salva a conversï¿½o nas variï¿½vies de leitura do AD 
 *
 *          
 
 * ----------------------------------------------------------------------------------------------
-* \version   s.00 - Primeira versão documentada
+* \version   s.00 - Primeira versï¿½o documentada
 * \date      23/03/2021
 ***********************************************************************************************/
 #include "InventTypes.h"
 #include "HdsMux.h"
 #include "HdsDma.h"
-#include "Main.h"
+#include "main.h"
 #include "MdlSensor.h"
-#include "hdsGpio.h"
+#include "HdsGpio.h"
 
 //#define NUM_SAMPLES_AD 70
 
 
-uint32_t ulDmaAdValues[5];   //Valores onde serão armazenadas as leituras 
+uint32_t ulDmaAdValues[5];   //Valores onde serï¿½o armazenadas as leituras 
 
 //uint32_t ulDmaBuf[5][NUM_SAMPLES_AD];   //bUFFER DAS LEIURAS 
 
@@ -47,7 +47,7 @@ void DmaStartAdReading(float fcte){
    //! usa uma cte para analogico e uma para o digital
     fAlphaCte=fcte;
  if(! bRunning){
- //!Já Inicia a conversão dos canais do AD a casa 1ms 
+ //!Jï¿½ Inicia a conversï¿½o dos canais do AD a casa 1ms 
     MuxTimers.LoopRun(ucMUX_SENSOR_LE_AD,1,DmaStartAD);
    bRunning=true;
    }
@@ -57,14 +57,14 @@ void DmaStartAdReading(float fcte){
 Rotina para o muxtimer de leiura do AD 
 */
 void DmaStopAdReading(){
- //!Já Inicia a conversão dos canais do AD a casa 1ms 
+ //!Jï¿½ Inicia a conversï¿½o dos canais do AD a casa 1ms 
     MuxTimers.Stop(ucMUX_SENSOR_LE_AD);
 
     bRunning=false;
 }
 
 /*
-Retorna a média das leituras 
+Retorna a mï¿½dia das leituras 
 */
 uint32_t DmaGetReading (uint8_t index   ){
 
@@ -85,7 +85,7 @@ uint32_t DmaGetReading (uint8_t index   ){
 
 
 /*
-Chamada no final da conversão do Dma para colocar a informação no buffer 
+Chamada no final da conversï¿½o do Dma para colocar a informaï¿½ï¿½o no buffer 
 buffer de 10 amostras
 
 */
@@ -111,9 +111,9 @@ buffer de 10 amostras
 
 /*********************************************************************************************//**
  * \function    DmaEndconversion ()
- * \details     Função chamada ao final pelo dma ao final da conversão 
+ * \details     Funï¿½ï¿½o chamada ao final pelo dma ao final da conversï¿½o 
  *              usa a Media movel exponencial  
- *              Tempo de conversão de 17us 
+ *              Tempo de conversï¿½o de 17us 
  * \author      
  * \date        04/03/2022
  ************************************************************************************************/

@@ -96,8 +96,8 @@ luminosidade o valor vai até 5000. não conseguimos realizar o ajuste.
 #include "MdlTimeEvents.h"
 #include "HdsGpio.h"
 #include <string.h>
-#include "HdsLCD.h"
-#include "HdsDisplay.h"
+#include "hdsLcd.h"
+#include "Hdsdisplay.h"
 #include "HdsTeclado.h"
 #include "MdlSensorAnalog.h"
 #include "MdlEnsaio.h"
@@ -106,7 +106,7 @@ luminosidade o valor vai até 5000. não conseguimos realizar o ajuste.
 #include "usb_host.h"
 #include "HdsIFlash.h"
 #include "MdlSensor.h"
-#include "Main.h"
+#include "main.h"
 #include "MdlCalib.h"
 
 
@@ -156,7 +156,7 @@ void TApplicationLL::Stop(void)
 {
  
 }
-#include "HdsLCD.h"
+#include "hdsLcd.h"
 /*********************************************************************************************//**
  * \brief   Run
  * \details Laço eterno de execucao das tarefas do medidor com eventos em 
