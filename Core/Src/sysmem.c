@@ -25,7 +25,7 @@ void *_sbrk(ptrdiff_t incr)
 
   prev_heap_end = heap_end;
 
-  if (heap_end + incr > (&_estack - (ptrdiff_t)&_Min_Stack_Size))
+  if (heap_end + incr > &_estack - (ptrdiff_t)&_Min_Stack_Size)
   {
     errno = ENOMEM;
     return (void *)-1;
