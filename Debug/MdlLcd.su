@@ -1,0 +1,9 @@
+Source/Mdl/MdlLcd.cpp:50:6:void C_Lcd::Update()	8	static
+Source/Mdl/MdlLcd.cpp:61:6:void C_Lcd::Write(uint32_t, char*)	4	static
+Source/Mdl/MdlLcd.cpp:29:6:void C_Lcd::Init()	8	static
+Source/Mdl/MdlLcd.cpp:90:6:void C_Lcd::Add(char*)	16	static
+Source/Mdl/MdlLcd.cpp:123:6:void C_Lcd::Setxy(uint8, uint8)	0	static
+Source/Mdl/MdlLcd.cpp:139:6:void C_Lcd::SetCursorOFF()	8	static
+Source/Mdl/MdlLcd.cpp:153:6:void C_Lcd::SetCursorOn()	8	static
+Source/Mdl/MdlLcd.cpp:167:7:uint8 C_Lcd::GetCursorState()	0	static
+Source/Mdl/MdlLcd.cpp:180:6:void C_Lcd::SetCursorPosition(uint8, uint8_t)	8	static

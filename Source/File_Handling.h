@@ -11,6 +11,11 @@
 #include "fatfs.h"
 #include "string.h"
 #include "stdio.h"
+#include <stdbool.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /* informa se a pendreve Esta inserida*/
 bool GetPendriveState();
@@ -56,7 +61,8 @@ void Check_USB_Details (void);
  */
 FRESULT Update_File (char *name, char *data);
 
-
-
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* FILE_HANDLING_RTOS_H_ */

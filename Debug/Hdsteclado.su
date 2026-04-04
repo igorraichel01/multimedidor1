@@ -1,0 +1,7 @@
+Source/Hds/Hdsteclado.cpp:38:6:void TTeclado::Init()	40	static
+Source/Hds/Hdsteclado.cpp:59:7:uint8 TTeclado::GetTecla()	0	static
+Source/Hds/Hdsteclado.cpp:74:6:void TTeclado::ResetTecla()	0	static
+Source/Hds/Hdsteclado.cpp:150:6:void TTeclado::_AcionaColuna(unsigned char)	8	static
+Source/Hds/Hdsteclado.cpp:183:6:void TTeclado::_DesligaColunas()	16	static
+Source/Hds/Hdsteclado.cpp:203:6:void TTeclado::AnalisaTeclas()	0	static
+Source/Hds/Hdsteclado.cpp:84:6:void TTeclado::TeclaReading()	8	static

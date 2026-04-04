@@ -1,0 +1,11 @@
+Source/Hds/HdsMux.cpp:26:17:void DoNothing()	0	static
+Source/Hds/HdsMux.cpp:37:6:void TMuxTimers::Init()	0	static
+Source/Hds/HdsMux.cpp:73:6:void TMuxTimers::Delayms(uint32_t)	8	static
+Source/Hds/HdsMux.cpp:93:6:void TMuxTimers::SetMsDelay(uint32_t)	0	static
+Source/Hds/HdsMux.cpp:110:6:bool TMuxTimers::CheckMsDelay()	0	static
+Source/Hds/HdsMux.cpp:127:10:uint32_t TMuxTimers::GetMsTicks()	0	static
+Source/Hds/HdsMux.cpp:139:6:void TMuxTimers::OnTimerInterruption()	24	static
+Source/Hds/HdsMux.cpp:183:6:void TMuxTimers::Stop(uint8_t)	0	static
+Source/Hds/HdsMux.cpp:202:6:void TMuxTimers::SingleRun(uint8_t, uint16_t, MuxFuncPointer)	0	static
+Source/Hds/HdsMux.cpp:222:6:void TMuxTimers::LoopRun(uint8_t, uint16_t, MuxFuncPointer)	0	static
+Source/Hds/HdsMux.cpp:240:17:void TIM1_TRG_COM_TIM11_IRQHandler()	8	static

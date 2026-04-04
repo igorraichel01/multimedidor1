@@ -1,0 +1,11 @@
+Source/Mdl/MdlEnsaioAnalogico.cpp:40:6:void C_Analogico::Init()	8	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:767:6:void C_Analogico::_ShowSensor(uint16_t)	8	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:780:10:uint32_t C_Analogico::_ShowUsb(bool)	8	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:859:6:void C_Analogico::_ShowTime(uint16_t, uint16_t)	8	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:879:10:uint16_t C_Analogico::_ShowTest()	32	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:1004:7:void C_Analogico::_UpdateShowLine1(uint8_t)	16	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:1066:6:void C_Analogico::_ShowTestLine1()	8	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:1111:8:uint16 C_Analogico::_CheckNextState(int16, int)	0	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:1229:6:void C_Analogico::fomatLine(int16_t, int16_t, uint8_t, uint8_t, uint8_t*)	40	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:1153:6:void C_Analogico::_ShowCalib(uint16_t, eCalibIndex)	32	static
+Source/Mdl/MdlEnsaioAnalogico.cpp:81:10:uint16_t C_Analogico::Run()	32	static

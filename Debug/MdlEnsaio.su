@@ -1,0 +1,2 @@
+Source/Mdl/MdlEnsaio.cpp:43:6:void C_Ensaio::Init()	8	static
+Source/Mdl/MdlEnsaio.cpp:64:6:void C_Ensaio::Run()	16	static

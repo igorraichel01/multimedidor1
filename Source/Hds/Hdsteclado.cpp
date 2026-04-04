@@ -160,15 +160,15 @@ void TTeclado::_AcionaColuna(unsigned char ColunaLogica) {
 
     //delay
     for (temp = 0; temp < 1000; temp++) {
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
-        __nop();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
+        __NOP();
     }
 
 }

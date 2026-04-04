@@ -40,7 +40,7 @@
 */
 
 #include "KBD2.h"
-#include "lcd.h"
+#include "LCD.h"
 #include "estados.h"
 #include "Modo0.h"
 #include "MdlSensor.h"

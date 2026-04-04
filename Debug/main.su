@@ -1,0 +1,7 @@
+Core/Src/main.c:294:6:void MX_DMA_Init()	16	static
+Core/Src/main.c:312:6:void MX_GPIO_InterruptInit()	56	static
+Core/Src/main.c:357:6:void Error_Handler()	0	static
+Core/Src/main.c:263:13:void MX_USART1_UART_Init()	8	static
+Core/Src/main.c:135:6:void SystemClock_Config()	88	static
+Core/Src/main.c:179:6:void MX_ADC1_Init()	32	static
+Core/Src/main.c:79:5:int main()	8	static

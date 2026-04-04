@@ -1,21 +1,25 @@
 /********************************** NOME DO MODULO *******************************************//**
  *\file     MdlLcd.cpp
  
- *\details   Módulo para controle das telas do LCD
+ *\details   Mï¿½dulo para controle das telas do LCD
  *		
  *
 
 * ----------------------------------------------------------------------------------------------
- * \version   s.00 - Primeira versão documentada
+ * \version   s.00 - Primeira versï¿½o documentada
  * \date      30/04/2021
  ***********************************************************************************************/
 #include "MdlEnsaioDigital.h"
 #include "Modo0.h"
 #include "HdsTeclado.h"
-#include "Mdlmsg.h"
+#include "MdlMSG.h"
 #include "MdlSensor.h"
 
 #include "KBD2.h"
+
+/* Forward declarations for functions defined in Fluxo.c */
+extern "C" void stopTimer(void);
+extern "C" void modo0_zera_valores(void);
 
 
 /*************************************************************************************************
@@ -27,7 +31,7 @@ C_Digital EnsaioDigital;
 
 /*********************************************************************************************//**
  * \function        init
- * \details   Inicializa o módulo 
+ * \details   Inicializa o mï¿½dulo 
 
  * \author     
  * \date         08/01/2022
@@ -37,7 +41,7 @@ void C_Digital::Init(void) {
   _eState=DIG_START;
 	
 	//! Inicializa os sensores
-	CSensor.Init();
+	SensorDigital.Init();
 	
   
  }
@@ -46,7 +50,7 @@ void C_Digital::Init(void) {
  
  /*********************************************************************************************//**
  * \function        Run
- * \details   Avança os estados da maquina de estados do ensaio do sensor  
+ * \details   Avanï¿½a os estados da maquina de estados do ensaio do sensor  
 							chamada a cada 100ms
  * \author     
  * \date         08/01/2022
@@ -66,7 +70,7 @@ bool bBit;
 		case DIG_WAIT_TELA_INICIAL:
 			if(_uiTimedelay++>TEMPO_TELA){
 				  _eState=DIG_WAIT_IDIOMA;
-				 //!Mosgra tela de seleção de idioma
+				 //!Mosgra tela de seleï¿½ï¿½o de idioma
 				 tela990();
 				
 			   }
@@ -87,7 +91,7 @@ bool bBit;
 				  tela0(); 		// ESCOLHA A FUNCAO 
 				 _eState=DIG_RUN;
 				 
-				 tecla_valida=M_FUNC;  //para entrar direto na tela de seleção dos sensores
+				 tecla_valida=M_FUNC;  //para entrar direto na tela de seleï¿½ï¿½o dos sensores
 				 EstadoModo0(flagEstado);
 			   }
 

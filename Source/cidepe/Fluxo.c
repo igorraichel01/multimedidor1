@@ -21,9 +21,9 @@
  //////////////////////////////////////////////////////////////////////////
  */
 #include "InventTypes.h"
-#include "Mdlmsg.h"
+#include "MdlMSG.h"
 #include "Modo0.h"
-#include "lcd.h"
+#include "LCD.h"
 #include "KBD2.h"
 #include "MdlSensor.h"
 #include "sensores.h"

@@ -1,0 +1,5 @@
+Source/Hds/HdsDma.cpp:36:6:void DmaStartAD()	8	static
+Source/Hds/HdsDma.cpp:46:6:void DmaStartAdReading(float)	8	static
+Source/Hds/HdsDma.cpp:59:6:void DmaStopAdReading()	8	static
+Source/Hds/HdsDma.cpp:69:10:uint32_t DmaGetReading(uint8_t)	0	static
+Source/Hds/HdsDma.cpp:121:6:void DmaEndconversion()	0	static

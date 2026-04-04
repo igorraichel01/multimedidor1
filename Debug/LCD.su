@@ -1,0 +1,25 @@
+Source/cidepe/LCD.c:17:6:void lcd_send_nibble(BYTE)	0	static
+Source/cidepe/LCD.c:22:6:void lcd_send_byte(BYTE, BYTE)	0	static
+Source/cidepe/LCD.c:34:6:void lcd_init()	0	static
+Source/cidepe/LCD.c:41:6:void lcd_posicaoxy(BYTE, BYTE)	8	static
+Source/cidepe/LCD.c:48:5:int lcd_getdigito(BYTE, BYTE)	0	static
+Source/cidepe/LCD.c:101:6:void lcd_escreve(char*)	8	static
+Source/cidepe/LCD.c:109:6:void lcd_limpa()	0	static
+Source/cidepe/LCD.c:116:6:void lcd_linha2()	8	static
+Source/cidepe/LCD.c:123:6:void lcd_linha1()	8	static
+Source/cidepe/LCD.c:130:6:void lcd_escreve_digito(int)	8	static
+Source/cidepe/LCD.c:179:6:long int lcd_getDistancia()	16	static
+Source/cidepe/LCD.c:201:6:long int lcd_getMassa()	16	static
+Source/cidepe/LCD.c:224:6:void lcd_escreve_Dist(long int)	24	static
+Source/cidepe/LCD.c:274:6:void lcd_escreve_Massa(long int)	24	static
+Source/cidepe/LCD.c:308:6:long int lcd_getInt()	8	static
+Source/cidepe/LCD.c:320:6:void lcd_escreve_Int(long int)	24	static
+Source/cidepe/LCD.c:404:6:void lcd_escreve_tempo2(float)	24	static
+Source/cidepe/LCD.c:418:6:void lcd_escreve_tempo(int32, int32)	40	static
+Source/cidepe/LCD.c:468:6:void lcd_escreve_veloc(float)	24	static
+Source/cidepe/LCD.c:527:5:int lcd_desloca_H(int, int)	8	static
+Source/cidepe/LCD.c:544:5:int lcd_desloca_H2(int, int)	8	static
+Source/cidepe/LCD.c:565:5:int lcd_desloca_H_massa(int, int)	8	static
+Source/cidepe/LCD.c:609:6:void lcd_atualiza_Dist(unsigned int, int)	16	static
+Source/cidepe/LCD.c:640:6:void lcd_atualiza_Massa(unsigned int, int)	16	static
+Source/cidepe/LCD.c:670:6:void lcd_cursorBlack(int)	8	static

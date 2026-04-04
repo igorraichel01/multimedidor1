@@ -9,13 +9,13 @@
  * \version   s.00 - Primeira versão documentada
  * \date      30/04/2021
  ***********************************************************************************************/
-#include "MdlEnsaioanalogico.h"
+#include "MdlEnsaioAnalogico.h"
 #include "File_Handling.h"
-#include "lcd.h"
+#include "LCD.h"
 #include "MdlLcd.h"
 #include "Modo0.h"
 #include "HdsTeclado.h"
-#include "Mdlmsg.h"
+#include "MdlMSG.h"
 #include "MdlSensorAnalog.h"
 #include <stdio.h>
 #include <string.h>

@@ -1,0 +1,28 @@
+Source/Mdl/MdlSensorAnalog.cpp:71:6:void C_SensorAnalog::Init(uint8)	4	static
+Source/Mdl/MdlSensorAnalog.cpp:101:10:uint16_t C_SensorAnalog::GetValue(eSensorTime)	0	static
+Source/Mdl/MdlSensorAnalog.cpp:113:6:void C_SensorAnalog::SetTestTime(uint16_t)	0	static
+Source/Mdl/MdlSensorAnalog.cpp:125:6:void C_SensorAnalog::SetSampleTime(uint16_t)	0	static
+Source/Mdl/MdlSensorAnalog.cpp:138:6:void C_SensorAnalog::UpdateValue(uint8_t, eSensorTime)	24	static
+Source/Mdl/MdlSensorAnalog.cpp:221:6:void C_SensorAnalog::UpdateSensor(uint8_t)	0	static
+Source/Mdl/MdlSensorAnalog.cpp:255:10:uint16_t C_SensorAnalog::GetSensor()	0	static
+Source/Mdl/MdlSensorAnalog.cpp:267:6:void C_SensorAnalog::SetSensor(eSensorType)	0	static
+Source/Mdl/MdlSensorAnalog.cpp:282:6:bool C_SensorAnalog::IsRunnig()	0	static
+Source/Mdl/MdlSensorAnalog.cpp:300:6:bool C_SensorAnalog::IsEnabled()	0	static
+Source/Mdl/MdlSensorAnalog.cpp:314:6:void C_SensorAnalog::Disabled()	8	static
+Source/Mdl/MdlSensorAnalog.cpp:328:6:void C_SensorAnalog::AddToBuffer(uint32_t)	32	static
+Source/Mdl/MdlSensorAnalog.cpp:41:6:void StoreReadingSense0()	8	static
+Source/Mdl/MdlSensorAnalog.cpp:45:6:void StoreReadingSense1()	8	static
+Source/Mdl/MdlSensorAnalog.cpp:49:6:void StoreReadingSense2()	8	static
+Source/Mdl/MdlSensorAnalog.cpp:53:6:void StoreReadingSense3()	8	static
+Source/Mdl/MdlSensorAnalog.cpp:58:6:void StoreReadingSense4()	8	static
+Source/Mdl/MdlSensorAnalog.cpp:419:6:void C_SensorAnalog::Run()	8	static
+Source/Mdl/MdlSensorAnalog.cpp:366:6:void C_SensorAnalog::Start()	16	static
+Source/Mdl/MdlSensorAnalog.cpp:493:7:float C_SensorAnalog::ConvertTemp(uint16_t)	0	static
+Source/Mdl/MdlSensorAnalog.cpp:519:7:float C_SensorAnalog::ConvertPressureKpa(uint16_t)	0	static
+Source/Mdl/MdlSensorAnalog.cpp:543:6:bool C_SensorAnalog::SaveTest()	5160	static
+Source/Mdl/MdlSensorAnalog.cpp:682:6:void C_SensorAnalog::GetLastValue(uint8_t*)	24	static
+Source/Mdl/MdlSensorAnalog.cpp:746:7:float C_SensorAnalog::GetLastReading()	8	static
+Source/Mdl/MdlSensorAnalog.cpp:776:7:float C_SensorAnalog::GetLastReadingVolts()	0	static
+Source/Mdl/MdlSensorAnalog.cpp:792:6:void C_SensorAnalog::UpdateCalibValue(uint8_t, eCalibIndex)	32	static
+Source/Mdl/MdlSensorAnalog.cpp:1002:9:int16_t C_SensorAnalog::GetCalibValue(eCalibIndex)	0	static
+Source/Mdl/MdlSensorAnalog.cpp:1014:6:void C_SensorAnalog::SetCalibValue(eCalibIndex, uint16_t)	0	static

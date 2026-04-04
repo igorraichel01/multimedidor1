@@ -1,0 +1,505 @@
+ARM GAS  /tmp/ccBzsLtU.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usb_host.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "USB_HOST/App/usb_host.c"
+  20              		.section	.rodata.USBH_UserProcess.str1.4,"aMS",%progbits,1
+  21              		.align	2
+  22              	.LC0:
+  23 0000 2F00     		.ascii	"/\000"
+  24              		.section	.text.USBH_UserProcess,"ax",%progbits
+  25              		.align	1
+  26              		.syntax unified
+  27              		.thumb
+  28              		.thumb_func
+  30              	USBH_UserProcess:
+  31              	.LVL0:
+  32              	.LFB221:
+   1:USB_HOST/App/usb_host.c **** /* USER CODE BEGIN Header */
+   2:USB_HOST/App/usb_host.c **** /**
+   3:USB_HOST/App/usb_host.c ****   ******************************************************************************
+   4:USB_HOST/App/usb_host.c ****   * @file            : usb_host.c
+   5:USB_HOST/App/usb_host.c ****   * @version         : v1.0_Cube
+   6:USB_HOST/App/usb_host.c ****   * @brief           : This file implements the USB Host
+   7:USB_HOST/App/usb_host.c ****   ******************************************************************************
+   8:USB_HOST/App/usb_host.c ****   * @attention
+   9:USB_HOST/App/usb_host.c ****   *
+  10:USB_HOST/App/usb_host.c ****   * Copyright (c) 2022 STMicroelectronics.
+  11:USB_HOST/App/usb_host.c ****   * All rights reserved.
+  12:USB_HOST/App/usb_host.c ****   *
+  13:USB_HOST/App/usb_host.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:USB_HOST/App/usb_host.c ****   * in the root directory of this software component.
+  15:USB_HOST/App/usb_host.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:USB_HOST/App/usb_host.c ****   *
+  17:USB_HOST/App/usb_host.c ****   ******************************************************************************
+  18:USB_HOST/App/usb_host.c ****   */
+  19:USB_HOST/App/usb_host.c **** /* USER CODE END Header */
+  20:USB_HOST/App/usb_host.c **** 
+  21:USB_HOST/App/usb_host.c **** /* Includes ------------------------------------------------------------------*/
+  22:USB_HOST/App/usb_host.c **** 
+  23:USB_HOST/App/usb_host.c **** #include "usb_host.h"
+  24:USB_HOST/App/usb_host.c **** #include "usbh_core.h"
+  25:USB_HOST/App/usb_host.c **** #include "usbh_msc.h"
+  26:USB_HOST/App/usb_host.c **** 
+ARM GAS  /tmp/ccBzsLtU.s 			page 2
+
+
+  27:USB_HOST/App/usb_host.c **** /* USER CODE BEGIN Includes */
+  28:USB_HOST/App/usb_host.c **** #include "File_Handling.h"
+  29:USB_HOST/App/usb_host.c **** 
+  30:USB_HOST/App/usb_host.c **** 
+  31:USB_HOST/App/usb_host.c **** /* USER CODE END Includes */
+  32:USB_HOST/App/usb_host.c **** 
+  33:USB_HOST/App/usb_host.c **** /* USER CODE BEGIN PV */
+  34:USB_HOST/App/usb_host.c **** /* Private variables ---------------------------------------------------------*/
+  35:USB_HOST/App/usb_host.c **** 
+  36:USB_HOST/App/usb_host.c **** /* USER CODE END PV */
+  37:USB_HOST/App/usb_host.c **** 
+  38:USB_HOST/App/usb_host.c **** /* USER CODE BEGIN PFP */
+  39:USB_HOST/App/usb_host.c **** /* Private function prototypes -----------------------------------------------*/
+  40:USB_HOST/App/usb_host.c **** 
+  41:USB_HOST/App/usb_host.c **** /* USER CODE END PFP */
+  42:USB_HOST/App/usb_host.c **** 
+  43:USB_HOST/App/usb_host.c **** /* USB Host core handle declaration */
+  44:USB_HOST/App/usb_host.c **** USBH_HandleTypeDef hUsbHostFS;
+  45:USB_HOST/App/usb_host.c **** ApplicationTypeDef Appli_state = APPLICATION_IDLE;
+  46:USB_HOST/App/usb_host.c **** 
+  47:USB_HOST/App/usb_host.c **** /*
+  48:USB_HOST/App/usb_host.c ****  * -- Insert your variables declaration here --
+  49:USB_HOST/App/usb_host.c ****  */
+  50:USB_HOST/App/usb_host.c **** /* USER CODE BEGIN 0 */
+  51:USB_HOST/App/usb_host.c **** 
+  52:USB_HOST/App/usb_host.c **** /* USER CODE END 0 */
+  53:USB_HOST/App/usb_host.c **** 
+  54:USB_HOST/App/usb_host.c **** /*
+  55:USB_HOST/App/usb_host.c ****  * user callback declaration
+  56:USB_HOST/App/usb_host.c ****  */
+  57:USB_HOST/App/usb_host.c **** static void USBH_UserProcess(USBH_HandleTypeDef *phost, uint8_t id);
+  58:USB_HOST/App/usb_host.c **** 
+  59:USB_HOST/App/usb_host.c **** /*
+  60:USB_HOST/App/usb_host.c ****  * -- Insert your external function declaration here --
+  61:USB_HOST/App/usb_host.c ****  */
+  62:USB_HOST/App/usb_host.c **** /* USER CODE BEGIN 1 */
+  63:USB_HOST/App/usb_host.c **** 
+  64:USB_HOST/App/usb_host.c **** /* USER CODE END 1 */
+  65:USB_HOST/App/usb_host.c **** 
+  66:USB_HOST/App/usb_host.c **** /**
+  67:USB_HOST/App/usb_host.c ****   * Init USB host library, add supported class and start the library
+  68:USB_HOST/App/usb_host.c ****   * @retval None
+  69:USB_HOST/App/usb_host.c ****   */
+  70:USB_HOST/App/usb_host.c **** void MX_USB_HOST_Init(void)
+  71:USB_HOST/App/usb_host.c **** {
+  72:USB_HOST/App/usb_host.c ****   /* USER CODE BEGIN USB_HOST_Init_PreTreatment */
+  73:USB_HOST/App/usb_host.c **** 
+  74:USB_HOST/App/usb_host.c ****   /* USER CODE END USB_HOST_Init_PreTreatment */
+  75:USB_HOST/App/usb_host.c **** 
+  76:USB_HOST/App/usb_host.c ****   /* Init host Library, add supported class and start the library. */
+  77:USB_HOST/App/usb_host.c ****   if (USBH_Init(&hUsbHostFS, USBH_UserProcess, HOST_FS) != USBH_OK)
+  78:USB_HOST/App/usb_host.c ****   {
+  79:USB_HOST/App/usb_host.c ****     Error_Handler();
+  80:USB_HOST/App/usb_host.c ****   }
+  81:USB_HOST/App/usb_host.c ****   if (USBH_RegisterClass(&hUsbHostFS, USBH_MSC_CLASS) != USBH_OK)
+  82:USB_HOST/App/usb_host.c ****   {
+  83:USB_HOST/App/usb_host.c ****     Error_Handler();
+ARM GAS  /tmp/ccBzsLtU.s 			page 3
+
+
+  84:USB_HOST/App/usb_host.c ****   }
+  85:USB_HOST/App/usb_host.c ****   if (USBH_Start(&hUsbHostFS) != USBH_OK)
+  86:USB_HOST/App/usb_host.c ****   {
+  87:USB_HOST/App/usb_host.c ****     Error_Handler();
+  88:USB_HOST/App/usb_host.c ****   }
+  89:USB_HOST/App/usb_host.c ****   /* USER CODE BEGIN USB_HOST_Init_PostTreatment */
+  90:USB_HOST/App/usb_host.c **** 
+  91:USB_HOST/App/usb_host.c ****   /* USER CODE END USB_HOST_Init_PostTreatment */
+  92:USB_HOST/App/usb_host.c **** }
+  93:USB_HOST/App/usb_host.c **** 
+  94:USB_HOST/App/usb_host.c **** /*
+  95:USB_HOST/App/usb_host.c ****  * Background task
+  96:USB_HOST/App/usb_host.c ****  */
+  97:USB_HOST/App/usb_host.c **** void MX_USB_HOST_Process(void)
+  98:USB_HOST/App/usb_host.c **** {
+  99:USB_HOST/App/usb_host.c ****   /* USB Host Background task */
+ 100:USB_HOST/App/usb_host.c ****   USBH_Process(&hUsbHostFS);
+ 101:USB_HOST/App/usb_host.c **** }
+ 102:USB_HOST/App/usb_host.c **** /*
+ 103:USB_HOST/App/usb_host.c ****  * user callback definition
+ 104:USB_HOST/App/usb_host.c ****  */
+ 105:USB_HOST/App/usb_host.c **** static void USBH_UserProcess  (USBH_HandleTypeDef *phost, uint8_t id)
+ 106:USB_HOST/App/usb_host.c **** {
+  33              		.loc 1 106 1 view -0
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 0, uses_anonymous_args = 0
+  37              		.loc 1 106 1 is_stmt 0 view .LVU1
+  38 0000 08B5     		push	{r3, lr}
+  39              		.cfi_def_cfa_offset 8
+  40              		.cfi_offset 3, -8
+  41              		.cfi_offset 14, -4
+ 107:USB_HOST/App/usb_host.c ****   /* USER CODE BEGIN CALL_BACK_1 */
+ 108:USB_HOST/App/usb_host.c ****   switch(id)
+  42              		.loc 1 108 3 is_stmt 1 view .LVU2
+  43 0002 0429     		cmp	r1, #4
+  44 0004 12D0     		beq	.L2
+  45 0006 0529     		cmp	r1, #5
+  46 0008 0AD0     		beq	.L3
+  47 000a 0229     		cmp	r1, #2
+  48 000c 0DD1     		bne	.L1
+ 109:USB_HOST/App/usb_host.c ****   {
+ 110:USB_HOST/App/usb_host.c ****   case HOST_USER_SELECT_CONFIGURATION:
+ 111:USB_HOST/App/usb_host.c ****   break;
+ 112:USB_HOST/App/usb_host.c **** 
+ 113:USB_HOST/App/usb_host.c ****   case HOST_USER_DISCONNECTION:
+ 114:USB_HOST/App/usb_host.c ****   Appli_state = APPLICATION_DISCONNECT;
+ 115:USB_HOST/App/usb_host.c ****   Unmount_USB();
+ 116:USB_HOST/App/usb_host.c ****   break;
+ 117:USB_HOST/App/usb_host.c **** 
+ 118:USB_HOST/App/usb_host.c ****   case HOST_USER_CLASS_ACTIVE:
+ 119:USB_HOST/App/usb_host.c ****   Appli_state = APPLICATION_READY;
+  49              		.loc 1 119 3 view .LVU3
+  50              		.loc 1 119 15 is_stmt 0 view .LVU4
+  51 000e 094B     		ldr	r3, .L7
+  52 0010 0222     		movs	r2, #2
+  53 0012 1A70     		strb	r2, [r3]
+ARM GAS  /tmp/ccBzsLtU.s 			page 4
+
+
+ 120:USB_HOST/App/usb_host.c ****  
+ 121:USB_HOST/App/usb_host.c ****   Mount_USB(); //verifica os detalhes
+  54              		.loc 1 121 3 is_stmt 1 view .LVU5
+  55 0014 FFF7FEFF 		bl	Mount_USB
+  56              	.LVL1:
+ 122:USB_HOST/App/usb_host.c ****   Scan_USB("/");  //le arquivos e diretórios
+  57              		.loc 1 122 3 view .LVU6
+  58 0018 0748     		ldr	r0, .L7+4
+  59 001a FFF7FEFF 		bl	Scan_USB
+  60              	.LVL2:
+ 123:USB_HOST/App/usb_host.c ****   
+ 124:USB_HOST/App/usb_host.c ****   
+ 125:USB_HOST/App/usb_host.c **** 
+ 126:USB_HOST/App/usb_host.c **** 
+ 127:USB_HOST/App/usb_host.c ****   break;
+  61              		.loc 1 127 3 view .LVU7
+  62 001e 04E0     		b	.L1
+  63              	.LVL3:
+  64              	.L3:
+ 114:USB_HOST/App/usb_host.c ****   Unmount_USB();
+  65              		.loc 1 114 3 view .LVU8
+ 114:USB_HOST/App/usb_host.c ****   Unmount_USB();
+  66              		.loc 1 114 15 is_stmt 0 view .LVU9
+  67 0020 044B     		ldr	r3, .L7
+  68 0022 0322     		movs	r2, #3
+  69 0024 1A70     		strb	r2, [r3]
+ 115:USB_HOST/App/usb_host.c ****   break;
+  70              		.loc 1 115 3 is_stmt 1 view .LVU10
+  71 0026 FFF7FEFF 		bl	Unmount_USB
+  72              	.LVL4:
+ 116:USB_HOST/App/usb_host.c **** 
+  73              		.loc 1 116 3 view .LVU11
+  74              	.L1:
+ 128:USB_HOST/App/usb_host.c **** 
+ 129:USB_HOST/App/usb_host.c ****   case HOST_USER_CONNECTION:
+ 130:USB_HOST/App/usb_host.c ****   Appli_state = APPLICATION_START;
+ 131:USB_HOST/App/usb_host.c ****   break;
+ 132:USB_HOST/App/usb_host.c **** 
+ 133:USB_HOST/App/usb_host.c ****   default:
+ 134:USB_HOST/App/usb_host.c ****   break;
+ 135:USB_HOST/App/usb_host.c ****   }
+ 136:USB_HOST/App/usb_host.c ****   /* USER CODE END CALL_BACK_1 */
+ 137:USB_HOST/App/usb_host.c **** }
+  75              		.loc 1 137 1 is_stmt 0 view .LVU12
+  76 002a 08BD     		pop	{r3, pc}
+  77              	.LVL5:
+  78              	.L2:
+ 130:USB_HOST/App/usb_host.c ****   break;
+  79              		.loc 1 130 3 is_stmt 1 view .LVU13
+ 130:USB_HOST/App/usb_host.c ****   break;
+  80              		.loc 1 130 15 is_stmt 0 view .LVU14
+  81 002c 014B     		ldr	r3, .L7
+  82 002e 0122     		movs	r2, #1
+  83 0030 1A70     		strb	r2, [r3]
+ 131:USB_HOST/App/usb_host.c **** 
+  84              		.loc 1 131 3 is_stmt 1 view .LVU15
+  85              		.loc 1 137 1 is_stmt 0 view .LVU16
+ARM GAS  /tmp/ccBzsLtU.s 			page 5
+
+
+  86 0032 FAE7     		b	.L1
+  87              	.L8:
+  88              		.align	2
+  89              	.L7:
+  90 0034 00000000 		.word	Appli_state
+  91 0038 00000000 		.word	.LC0
+  92              		.cfi_endproc
+  93              	.LFE221:
+  95              		.section	.text.MX_USB_HOST_Init,"ax",%progbits
+  96              		.align	1
+  97              		.global	MX_USB_HOST_Init
+  98              		.syntax unified
+  99              		.thumb
+ 100              		.thumb_func
+ 102              	MX_USB_HOST_Init:
+ 103              	.LFB219:
+  71:USB_HOST/App/usb_host.c ****   /* USER CODE BEGIN USB_HOST_Init_PreTreatment */
+ 104              		.loc 1 71 1 is_stmt 1 view -0
+ 105              		.cfi_startproc
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108 0000 08B5     		push	{r3, lr}
+ 109              		.cfi_def_cfa_offset 8
+ 110              		.cfi_offset 3, -8
+ 111              		.cfi_offset 14, -4
+  77:USB_HOST/App/usb_host.c ****   {
+ 112              		.loc 1 77 3 view .LVU18
+  77:USB_HOST/App/usb_host.c ****   {
+ 113              		.loc 1 77 7 is_stmt 0 view .LVU19
+ 114 0002 0122     		movs	r2, #1
+ 115 0004 0B49     		ldr	r1, .L17
+ 116 0006 0C48     		ldr	r0, .L17+4
+ 117 0008 FFF7FEFF 		bl	USBH_Init
+ 118              	.LVL6:
+  77:USB_HOST/App/usb_host.c ****   {
+ 119              		.loc 1 77 6 discriminator 1 view .LVU20
+ 120 000c 48B9     		cbnz	r0, .L14
+ 121              	.L10:
+  81:USB_HOST/App/usb_host.c ****   {
+ 122              		.loc 1 81 3 is_stmt 1 view .LVU21
+  81:USB_HOST/App/usb_host.c ****   {
+ 123              		.loc 1 81 7 is_stmt 0 view .LVU22
+ 124 000e 0B49     		ldr	r1, .L17+8
+ 125 0010 0948     		ldr	r0, .L17+4
+ 126 0012 FFF7FEFF 		bl	USBH_RegisterClass
+ 127              	.LVL7:
+  81:USB_HOST/App/usb_host.c ****   {
+ 128              		.loc 1 81 6 discriminator 1 view .LVU23
+ 129 0016 38B9     		cbnz	r0, .L15
+ 130              	.L11:
+  85:USB_HOST/App/usb_host.c ****   {
+ 131              		.loc 1 85 3 is_stmt 1 view .LVU24
+  85:USB_HOST/App/usb_host.c ****   {
+ 132              		.loc 1 85 7 is_stmt 0 view .LVU25
+ 133 0018 0748     		ldr	r0, .L17+4
+ 134 001a FFF7FEFF 		bl	USBH_Start
+ 135              	.LVL8:
+ARM GAS  /tmp/ccBzsLtU.s 			page 6
+
+
+  85:USB_HOST/App/usb_host.c ****   {
+ 136              		.loc 1 85 6 discriminator 1 view .LVU26
+ 137 001e 30B9     		cbnz	r0, .L16
+ 138              	.L9:
+  92:USB_HOST/App/usb_host.c **** 
+ 139              		.loc 1 92 1 view .LVU27
+ 140 0020 08BD     		pop	{r3, pc}
+ 141              	.L14:
+  79:USB_HOST/App/usb_host.c ****   }
+ 142              		.loc 1 79 5 is_stmt 1 view .LVU28
+ 143 0022 FFF7FEFF 		bl	Error_Handler
+ 144              	.LVL9:
+ 145 0026 F2E7     		b	.L10
+ 146              	.L15:
+  83:USB_HOST/App/usb_host.c ****   }
+ 147              		.loc 1 83 5 view .LVU29
+ 148 0028 FFF7FEFF 		bl	Error_Handler
+ 149              	.LVL10:
+ 150 002c F4E7     		b	.L11
+ 151              	.L16:
+  87:USB_HOST/App/usb_host.c ****   }
+ 152              		.loc 1 87 5 view .LVU30
+ 153 002e FFF7FEFF 		bl	Error_Handler
+ 154              	.LVL11:
+  92:USB_HOST/App/usb_host.c **** 
+ 155              		.loc 1 92 1 is_stmt 0 view .LVU31
+ 156 0032 F5E7     		b	.L9
+ 157              	.L18:
+ 158              		.align	2
+ 159              	.L17:
+ 160 0034 00000000 		.word	USBH_UserProcess
+ 161 0038 00000000 		.word	hUsbHostFS
+ 162 003c 00000000 		.word	USBH_msc
+ 163              		.cfi_endproc
+ 164              	.LFE219:
+ 166              		.section	.text.MX_USB_HOST_Process,"ax",%progbits
+ 167              		.align	1
+ 168              		.global	MX_USB_HOST_Process
+ 169              		.syntax unified
+ 170              		.thumb
+ 171              		.thumb_func
+ 173              	MX_USB_HOST_Process:
+ 174              	.LFB220:
+  98:USB_HOST/App/usb_host.c ****   /* USB Host Background task */
+ 175              		.loc 1 98 1 is_stmt 1 view -0
+ 176              		.cfi_startproc
+ 177              		@ args = 0, pretend = 0, frame = 0
+ 178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 179 0000 08B5     		push	{r3, lr}
+ 180              		.cfi_def_cfa_offset 8
+ 181              		.cfi_offset 3, -8
+ 182              		.cfi_offset 14, -4
+ 100:USB_HOST/App/usb_host.c **** }
+ 183              		.loc 1 100 3 view .LVU33
+ 184 0002 0248     		ldr	r0, .L21
+ 185 0004 FFF7FEFF 		bl	USBH_Process
+ 186              	.LVL12:
+ARM GAS  /tmp/ccBzsLtU.s 			page 7
+
+
+ 101:USB_HOST/App/usb_host.c **** /*
+ 187              		.loc 1 101 1 is_stmt 0 view .LVU34
+ 188 0008 08BD     		pop	{r3, pc}
+ 189              	.L22:
+ 190 000a 00BF     		.align	2
+ 191              	.L21:
+ 192 000c 00000000 		.word	hUsbHostFS
+ 193              		.cfi_endproc
+ 194              	.LFE220:
+ 196              		.global	Appli_state
+ 197              		.section	.bss.Appli_state,"aw",%nobits
+ 200              	Appli_state:
+ 201 0000 00       		.space	1
+ 202              		.global	hUsbHostFS
+ 203              		.section	.bss.hUsbHostFS,"aw",%nobits
+ 204              		.align	2
+ 207              	hUsbHostFS:
+ 208 0000 00000000 		.space	984
+ 208      00000000 
+ 208      00000000 
+ 208      00000000 
+ 208      00000000 
+ 209              		.text
+ 210              	.Letext0:
+ 211              		.file 2 "/usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h"
+ 212              		.file 3 "USB_HOST/App/usb_host.h"
+ 213              		.file 4 "Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_def.h"
+ 214              		.file 5 "Middlewares/Third_Party/FatFs/src/ff.h"
+ 215              		.file 6 "Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc/usbh_msc.h"
+ 216              		.file 7 "Middlewares/ST/STM32_USB_Host_Library/Core/Inc/usbh_core.h"
+ 217              		.file 8 "Source/File_Handling.h"
+ 218              		.file 9 "Core/Inc/main.h"
+ARM GAS  /tmp/ccBzsLtU.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usb_host.c
+     /tmp/ccBzsLtU.s:21     .rodata.USBH_UserProcess.str1.4:00000000 $d
+     /tmp/ccBzsLtU.s:25     .text.USBH_UserProcess:00000000 $t
+     /tmp/ccBzsLtU.s:30     .text.USBH_UserProcess:00000000 USBH_UserProcess
+     /tmp/ccBzsLtU.s:90     .text.USBH_UserProcess:00000034 $d
+     /tmp/ccBzsLtU.s:200    .bss.Appli_state:00000000 Appli_state
+     /tmp/ccBzsLtU.s:96     .text.MX_USB_HOST_Init:00000000 $t
+     /tmp/ccBzsLtU.s:102    .text.MX_USB_HOST_Init:00000000 MX_USB_HOST_Init
+     /tmp/ccBzsLtU.s:160    .text.MX_USB_HOST_Init:00000034 $d
+     /tmp/ccBzsLtU.s:207    .bss.hUsbHostFS:00000000 hUsbHostFS
+     /tmp/ccBzsLtU.s:167    .text.MX_USB_HOST_Process:00000000 $t
+     /tmp/ccBzsLtU.s:173    .text.MX_USB_HOST_Process:00000000 MX_USB_HOST_Process
+     /tmp/ccBzsLtU.s:192    .text.MX_USB_HOST_Process:0000000c $d
+     /tmp/ccBzsLtU.s:201    .bss.Appli_state:00000000 $d
+     /tmp/ccBzsLtU.s:204    .bss.hUsbHostFS:00000000 $d
+                           .group:00000000 wm4.0.a2c88c0e0e60094af2c84dce921779d2
+                           .group:00000000 wm4.stm32f4xx.h.39.163e65267b4f964a08764289722b975f
+                           .group:00000000 wm4.stm32f401xc.h.35.52d05665f5a2df9c1992e17eee7d2af5
+                           .group:00000000 wm4.stdint.h.29.6d480f4ba0f60596e88234283d42444f
+                           .group:00000000 wm4.cmsis_version.h.32.4d5822004c01a829a975260e854b5f8e
+                           .group:00000000 wm4.core_cm4.h.66.e4ff136c4a17abc46741866f64f8e729
+                           .group:00000000 wm4.cmsis_gcc.h.26.6774fe91202d65f4d5ffcff60e00da34
+                           .group:00000000 wm4.core_cm4.h.174.059a5e001a9e729091d1407208e93224
+                           .group:00000000 wm4.mpu_armv7.h.32.27b4593cb2f8d3152ca5d97a9d72b321
+                           .group:00000000 wm4.stm32f401xc.h.636.9a664cc173dbe5d5f2dac1e758e3577d
+                           .group:00000000 wm4.stm32f4xx.h.196.0b21137cf6c6923d8fd1f4d94a3bfdd4
+                           .group:00000000 wm4.stm32f4xx_hal_conf.h.25.758a9f5dc6450f8647b5af7fe8eb27ed
+                           .group:00000000 wm4.stm32_hal_legacy.h.23.e2601123cf1b2a3b6d11d949644ddf87
+                           .group:00000000 wm4.stddef.h.39.0dc9006b34572d4d9cae4c8b422c4971
+                           .group:00000000 wm4.stm32f4xx_hal_def.h.58.f614308b482cecea9bcc0016240ac0fc
+                           .group:00000000 wm4.stm32f4xx_hal_rcc_ex.h.22.3f3b596cc307dc701c7c99b0fc6c9b58
+                           .group:00000000 wm4.stm32f4xx_hal_rcc.h.108.b82c8c670b41d96b2920e2f63661be15
+                           .group:00000000 wm4.stm32f4xx_hal_gpio.h.22.e47df9f0f5be4ddc2ed2d14042c5e680
+                           .group:00000000 wm4.stm32f4xx_hal_gpio_ex.h.22.5014ee010492a350679453c3b4a59718
+                           .group:00000000 wm4.stm32f4xx_hal_gpio.h.255.5b948d47ad1357d6d2213e5e5ca4755c
+                           .group:00000000 wm4.stm32f4xx_hal_exti.h.22.1f47767199c5bf749c04088e5c61c9c8
+                           .group:00000000 wm4.stm32f4xx_hal_dma.h.22.fffce20ac9119c50557659c75e75ab1c
+                           .group:00000000 wm4.stm32f4xx_hal_dma.h.721.a1e57ffbc615f926e6509c5acc65e492
+                           .group:00000000 wm4.stm32f4xx_hal_cortex.h.22.e6aa3b847b5388be63c32d1f9e696ef7
+                           .group:00000000 wm4.stm32f4xx_ll_adc.h.22.a8e07f8509bbb4868e2c24461c7eee47
+                           .group:00000000 wm4.stm32f4xx_hal_adc.h.160.ef18931a059b62efbac7762c6a09e47f
+                           .group:00000000 wm4.stm32f4xx_hal_adc_ex.h.22.25ddc09ef7109b33adae2990f50c4304
+                           .group:00000000 wm4.stm32f4xx_hal_adc.h.640.733b38c420d3407eb5f8ddd98816c661
+                           .group:00000000 wm4.stm32f4xx_hal_flash.h.22.31b301be2655c3eb8583e51c8231544a
+                           .group:00000000 wm4.stm32f4xx_hal_flash_ex.h.22.00cb5cb208d28a1f20f3b257a6f51bad
+                           .group:00000000 wm4.stm32f4xx_hal_flash.h.363.51efdf0f6c88f683efb89d7cc95cc1be
+                           .group:00000000 wm4.stm32f4xx_hal_pwr.h.22.2c27d93ae187efe3a73816f03a329970
+                           .group:00000000 wm4.stm32f4xx_hal_pwr_ex.h.22.04eb3957e13ca6e5ed8952d2d168bdc0
+                           .group:00000000 wm4.stm32f4xx_hal_pwr.h.337.60b43975c84527a23cb6994b23165a5e
+                           .group:00000000 wm4.stm32f4xx_hal_uart.h.22.591b491756a19342b0bf79eea5b33e1b
+                           .group:00000000 wm4.stm32f4xx_ll_usb.h.22.3497d8ac31b2bdafc7c2a34d860c4769
+                           .group:00000000 wm4.stm32f4xx_hal_hcd.h.111.a51c3bd0d61d2d8cadb372f7c7d9eccb
+                           .group:00000000 wm4.stm32f4xx_hal.h.72.a5a58188aa461a0614f1e58e159c7840
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.newlib.h.27.c836a31b4651d2e2221512767dba946d
+                           .group:00000000 wm4.ieeefp.h.77.5ad60f72ea25fc152400b550ac118212
+ARM GAS  /tmp/ccBzsLtU.s 			page 9
+
+
+                           .group:00000000 wm4.features.h.22.4e5514d51694f64cae235f84d9e565a5
+                           .group:00000000 wm4.config.h.224.88344135d9de3e7ea139102cd6493448
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.stdio.h.31.7c0e28c411445f3f9c5b11accf882760
+                           .group:00000000 wm4._default_types.h.6.959254cf5f09734ea7516c89e8bb21bd
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+                           .group:00000000 wm4.cdefs.h.49.70fc7af612f78ddcace70fdd90b5623b
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.c0958401bd0ce484d507ee19aacab817
+                           .group:00000000 wm4.reent.h.78.ffae6115d9409cbff6542f042d93715e
+                           .group:00000000 wm4.assert.h.11.db24e541f16414db224bf986d21017e2
+                           .group:00000000 wm4.reent.h.460.dc5a3362e34409fa841b38093e890350
+                           .group:00000000 wm4.stdio.h.67.0cf8a9c281ab0b348aef5c02e7e48825
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.87.408e5d973372126daeef099c555b2753
+                           .group:00000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:00000000 wm4.alloca.h.8.dfc0c703c47ec3e69746825b17d9e66d
+                           .group:00000000 wm4.stdlib.h.56.f4862cfbf4363a1db01842d5bdf72c18
+                           .group:00000000 wm4.string.h.8.c4b8571ce60dff2817f43fec8b86aecd
+                           .group:00000000 wm4.main.h.23.c7cc522c828f0d601be03b3b918ebcc6
+                           .group:00000000 wm4.usbh_conf.h.65.151c65329cc7c235ce65de2a3390581e
+                           .group:00000000 wm4.usbh_def.h.22.880def0f14ab205d26992d2a2bb1bab8
+                           .group:00000000 wm4.usbh_ioreq.h.50.0074542f2717bb439abbb8fd98a9701e
+                           .group:00000000 wm4.usbh_ctlreq.h.22.9bfba4b97481aa4223fea2a82ac65e06
+                           .group:00000000 wm4.usbh_core.h.55.ae1dc9825935c4c49bf309379b79900a
+                           .group:00000000 wm4.usbh_msc_bot.h.22.39bce71efd529949dc3aa2f829731bb1
+                           .group:00000000 wm4.usbh_msc_scsi.h.22.08451b08ada808d7ace91ebdd07a6a33
+                           .group:00000000 wm4.usbh_msc.h.89.b5971865bf452589c8f1958913d76df6
+                           .group:00000000 wm4.ffconf.h.20.730aadac49b87b673e1c9b48dbe81c55
+                           .group:00000000 wm4.ff.h.63.b9783c867113c7a537e7ba1f8eec3068
+                           .group:00000000 wm4.diskio.h.6.c336166bddd01dd89442a8f6b7755b72
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+
+UNDEFINED SYMBOLS
+Mount_USB
+Scan_USB
+Unmount_USB
+USBH_Init
+USBH_RegisterClass
+USBH_Start
+Error_Handler
+USBH_msc
+USBH_Process

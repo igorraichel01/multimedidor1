@@ -1,17 +1,17 @@
 ///////////////////////////////////////////////////////////////////////////
 ////                             LCD.H                                 ////
 ////                 Driver para modulo LCD ITM1602                    ////
-////         Define funções para inicializar, movimentar,              ////
+////         Define funï¿½ï¿½es para inicializar, movimentar,              ////
 ////                escrever e ler caracteres.						   ////	
 ///////////////////////////////////////////////////////////////////////////  
 
-#include "lcd.h"
+#include "LCD.h"
 #include "MdlLcd.h"
 #include <stdio.h>
 #include <string.h>
 
 
-///////////////////// instruções de baixo nível
+///////////////////// instruï¿½ï¿½es de baixo nï¿½vel
 
 
 void lcd_send_nibble( BYTE n ) 
@@ -27,7 +27,7 @@ void lcd_send_byte( BYTE address, BYTE n )
 
 
 
-/////////////////////////////FUNÇÕES//////////////////////////////
+/////////////////////////////FUNï¿½ï¿½ES//////////////////////////////
 
 
 ////////////// inicializa LCD //////////////////////////
@@ -126,7 +126,7 @@ void lcd_linha1()
 	 lcd_posicaoxy(1,LCD_LINHA_1);
 }
 
-/////////// escreve um dígito de tempo ///////////////////
+/////////// escreve um dï¿½gito de tempo ///////////////////
 void lcd_escreve_digito(int digito)          
 {
 

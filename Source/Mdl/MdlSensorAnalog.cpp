@@ -16,7 +16,7 @@
 #include <string.h>
 #include "MdlLcd.h"
 #include "HdsMux.h"
-#include "Main.h"
+#include "main.h"
 #include "File_Handling.h"
 #include "usb_host.h"
 #include "usbh_core.h"

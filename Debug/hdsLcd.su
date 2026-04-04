@@ -1,0 +1,28 @@
+Source/Hds/hdsLcd.cpp:74:13:void LCD_ConfigBus(EPortmode)	32	static
+Source/Hds/hdsLcd.cpp:79:13:void LCD_SetCtrl(GPIO_TypeDef*, uint16_t, EPortState)	8	static
+Source/Hds/hdsLcd.cpp:83:13:uint8_t LCD_GetBusy()	8	static
+Source/Hds/hdsLcd.cpp:53:6:void LCD_DelayUs(uint32_t)	0	static
+Source/Hds/hdsLcd.cpp:87:13:void LCD_SetData(uint8_t)	16	static
+Source/Hds/hdsLcd.cpp:214:15:unsigned char LCD_MakePosCommand(short unsigned int, short unsigned int)	0	static
+Source/Hds/hdsLcd.cpp:433:6:void LCD_ClearCGRAM()	0	static
+Source/Hds/hdsLcd.cpp:463:6:void LCD_ClearUnusedCGRAM()	8	static
+Source/Hds/hdsLcd.cpp:510:6:void LCD_HoldWhileBusy()	8	static
+Source/Hds/hdsLcd.cpp:172:6:void LCD_WriteByte(unsigned char, uint8_t)	16	static
+Source/Hds/hdsLcd.cpp:299:6:void LCD_WriteRawString(short unsigned int, short unsigned int, const char*)	8	static
+Source/Hds/hdsLcd.cpp:491:6:void LCD_ClearScreen()	8	static
+Source/Hds/hdsLcd.cpp:117:6:void lcdHwInit()	40	static
+Source/Hds/hdsLcd.cpp:539:6:uint8_t LCD_IsBackLightOn()	0	static
+Source/Hds/hdsLcd.cpp:556:6:void LCD_BackLightOn(uint8_t)	0	static
+Source/Hds/hdsLcd.cpp:560:6:void LCD_CheckChars()	8	static
+Source/Hds/hdsLcd.cpp:589:6:void LCD_WriteCGRam(short unsigned int, const char*)	16	static
+Source/Hds/hdsLcd.cpp:614:6:char LCD_OperateChar(char)	24	static
+Source/Hds/hdsLcd.cpp:255:6:void LCD_WriteString(short unsigned int, short unsigned int, unsigned char, const char*)	16	static
+Source/Hds/hdsLcd.cpp:340:6:uint8_t LCD_WriteWordBreakString(short unsigned int, short unsigned int, const char*)	32	static
+Source/Hds/hdsLcd.cpp:286:6:void LCD_WriteSmartString(short unsigned int, short unsigned int, const char*)	8	static
+Source/Hds/hdsLcd.cpp:310:6:void LCD_WriteDumbString(short unsigned int, short unsigned int, const char*, unsigned int)	16	static
+Source/Hds/hdsLcd.cpp:680:5:int LCD_CalcAbsolutePosition(int)	0	static
+Source/Hds/hdsLcd.cpp:738:15:unsigned char LCD_GetCurrentPosition()	0	static
+Source/Hds/hdsLcd.cpp:742:6:void LCD_SetCursorPosition(short unsigned int)	0	static
+Source/Hds/hdsLcd.cpp:711:6:void LCD_ClearCursor()	8	static
+Source/Hds/hdsLcd.cpp:731:6:void LCD_PutCursor(short unsigned int)	8	static
+Source/Hds/hdsLcd.cpp:746:15:unsigned char LCD_GetCursorPosition()	0	static

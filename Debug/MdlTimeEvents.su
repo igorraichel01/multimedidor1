@@ -1,0 +1,7 @@
+Source/Mdl/MdlTimeEvents.cpp:49:6:void TTimeEvents::Start()	8	static
+Source/Mdl/MdlTimeEvents.cpp:69:6:void TTimeEvents::Interruption5ms()	0	static
+Source/Mdl/MdlTimeEvents.cpp:40:6:void _MdlTime5Ms()	8	static
+Source/Mdl/MdlTimeEvents.cpp:97:6:bool TTimeEvents::Event5ms()	0	static
+Source/Mdl/MdlTimeEvents.cpp:110:6:bool TTimeEvents::Event10ms()	0	static
+Source/Mdl/MdlTimeEvents.cpp:123:6:bool TTimeEvents::Event100ms()	0	static
+Source/Mdl/MdlTimeEvents.cpp:136:6:bool TTimeEvents::Event1s()	0	static
