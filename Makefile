@@ -39,6 +39,7 @@ Core/Src/system_stm32f4xx.c \
 Source/File_Handling.c \
 Source/Hds/Retarget.c \
 Source/cidepe/LCD.c \
+Source/cidepe/estados.c \
 Source/cidepe/Modo0.c \
 Source/cidepe/KBD2.c \
 Source/cidepe/Fluxo.c \

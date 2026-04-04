@@ -97,6 +97,9 @@
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.size.1" name="MCU Size" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.size"/>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="Source/cidepe/main.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
