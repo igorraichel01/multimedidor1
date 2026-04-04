@@ -12,7 +12,7 @@
  * ----------------------------------------------------------------------------------------------
  */
  
-#include "HdsLCD.h"
+#include "hdsLcd.h"
 
 #define _X_ 1
 #define ___ 0
@@ -29,7 +29,7 @@
 #define HAS_LCD_DISPLAY  1
 
 #if HAS_LCD_DISPLAY
-const char charAlarmDisabled[CHAR_HEIGHT] =  {               //ñ
+const char charAlarmDisabled[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  _X_ , _X_ , _X_ , _X_ , _X_    )   ,
 CONCAT(  _X_ , ___ , _X_ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
@@ -40,7 +40,7 @@ CONCAT(  _X_ , _X_ , _X_ , _X_ , _X_    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 };
 
-const char charAlarmReset[CHAR_HEIGHT] =  {               //ñ
+const char charAlarmReset[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  _X_ , _X_ , _X_ , _X_ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , _X_ , _X_ , _X_    )   ,
@@ -51,7 +51,7 @@ CONCAT(  _X_ , _X_ , _X_ , _X_ , _X_    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 };
 
-const char charNTilde[CHAR_HEIGHT] =  {               //ñ
+const char charNTilde[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , _X_ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , _X_ , ___    )   ,
@@ -62,7 +62,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 };
 
-const char charCCidille[CHAR_HEIGHT] =  {              //ç
+const char charCCidille[CHAR_HEIGHT] =  {              //ï¿½
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
@@ -73,7 +73,7 @@ CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , _X_ , ___ , ___    )   ,
 };
 
-const char charATilde[CHAR_HEIGHT] =  {              //ã
+const char charATilde[CHAR_HEIGHT] =  {              //ï¿½
 CONCAT(  ___ , _X_ , _X_ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -84,7 +84,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , _X_    )   ,
 };
 
-const char charACirc[CHAR_HEIGHT] =  {              //â
+const char charACirc[CHAR_HEIGHT] =  {              //ï¿½
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -95,7 +95,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , _X_    )   ,
 };
 
-const char charOTilde[CHAR_HEIGHT] =  {               //õ
+const char charOTilde[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , _X_ , _X_ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -106,7 +106,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charOAcc[CHAR_HEIGHT] =  {               //ó
+const char charOAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
@@ -117,7 +117,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charOCirc[CHAR_HEIGHT] =  {               //ô
+const char charOCirc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , ___ , _X_ , ___    )   ,
@@ -128,7 +128,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charECirc[CHAR_HEIGHT] =  {               //ê
+const char charECirc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -139,7 +139,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charEAcc[CHAR_HEIGHT] =  {               //é
+const char charEAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -150,7 +150,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charAAcc[CHAR_HEIGHT] =  {               //á
+const char charAAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -161,7 +161,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , _X_    )   ,
 };
 
-const char charAGrv[CHAR_HEIGHT] =  {               //á
+const char charAGrv[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , _X_ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -172,7 +172,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , _X_    )   ,
 };
 
-const char charIAcc[CHAR_HEIGHT] =  {               //í
+const char charIAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -183,7 +183,7 @@ CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charUAcc[CHAR_HEIGHT] =  {               //ú
+const char charUAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
@@ -194,7 +194,7 @@ CONCAT(  ___ , _X_ , _X_ , ___ , _X_    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 };
 
-const char charNUTilde[CHAR_HEIGHT] =  {              //Ñ
+const char charNUTilde[CHAR_HEIGHT] =  {              //ï¿½
 CONCAT(  ___ , _X_ , _X_ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -205,7 +205,7 @@ CONCAT(  _X_ , ___ , ___ , _X_ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 };
 
-const char charCUCidille[CHAR_HEIGHT] =  {              //Ç
+const char charCUCidille[CHAR_HEIGHT] =  {              //ï¿½
 CONCAT(  ___ , _X_ , _X_ , _X_ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , ___    )   ,
@@ -216,7 +216,7 @@ CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , _X_ , ___ , ___    )   ,
 };
 
-const char charAUTilde[CHAR_HEIGHT] =  {              //Ã
+const char charAUTilde[CHAR_HEIGHT] =  {              //ï¿½
 CONCAT(  ___ , _X_ , _X_ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -227,7 +227,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 };
 
-const char charAUCirc[CHAR_HEIGHT] =  {              //Â
+const char charAUCirc[CHAR_HEIGHT] =  {              //ï¿½
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -238,7 +238,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 };
 
-const char charOUTilde[CHAR_HEIGHT] =  {               //Õ
+const char charOUTilde[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , _X_ , _X_ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -249,7 +249,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charOUAcc[CHAR_HEIGHT] =  {               //Ó
+const char charOUAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -260,7 +260,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charOUCirc[CHAR_HEIGHT] =  {               //Ô
+const char charOUCirc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -271,7 +271,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charEUCirc[CHAR_HEIGHT] =  {               //Ê
+const char charEUCirc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -282,7 +282,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  _X_ , _X_ , _X_ , _X_ , _X_    )   ,
 };
 
-const char charEUAcc[CHAR_HEIGHT] =  {               //É
+const char charEUAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -293,7 +293,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  _X_ , _X_ , _X_ , _X_ , _X_    )   ,
 };
 
-const char charAUAcc[CHAR_HEIGHT] =  {               //Á
+const char charAUAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -304,7 +304,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 };
 
-const char charAUGrv[CHAR_HEIGHT] =  {               //À
+const char charAUGrv[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , _X_ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -315,7 +315,7 @@ CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
 };
 
-const char charIUAcc[CHAR_HEIGHT] =  {               //Í
+const char charIUAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -326,7 +326,7 @@ CONCAT(  ___ , ___ , _X_ , ___ , ___    )   ,
 CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 };
 
-const char charUUAcc[CHAR_HEIGHT] =  {               //Ú
+const char charUUAcc[CHAR_HEIGHT] =  {               //ï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , ___    )   ,
 CONCAT(  _X_ , ___ , _X_ , ___ , _X_    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
@@ -475,7 +475,7 @@ CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 
 
 
-const char charNumber[CHAR_HEIGHT] =  {              //n°
+const char charNumber[CHAR_HEIGHT] =  {              //nï¿½
 CONCAT(  ___ , ___ , ___ , _X_ , _X_    )   ,
 CONCAT(  ___ , ___ , ___ , _X_ , _X_    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -990,90 +990,90 @@ unsigned  char lcdCGRamCount = 0;
  sSpecialChar lcdSpecialChars[] =
 { 
     // ascii , drawing       ,  CGRAM address, prio 
-    //{ 'Ù'    , charAlrFilled , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Û'    , (char *)&charAlrEmpty  , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'ñ'    , (char *)&charNTilde    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'ã'    , (char *)&charATilde    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'õ'    , (char *)&charOTilde    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'ç'    , (char *)&charCCidille  , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'á'    , (char *)&charAAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'à'    , (char *)&charAGrv      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'é'    , (char *)&charEAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'í'    , (char *)&charIAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'ó'    , (char *)&charOAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'â'    , (char *)&charACirc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'ê'    , (char *)&charECirc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'ô'    , (char *)&charOCirc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'ú'    , (char *)&charUAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Ñ'    , (char *)&charNUTilde   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'Ã'    , (char *)&charAUTilde   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'Õ'    , (char *)&charOUTilde   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'Ç'    , (char *)&charCUCidille , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'Á'    , (char *)&charAUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//	  { 'À'    , (char *)&charAUGrv     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { 'É'    , (char *)&charEUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Í'    , (char *)&charIUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Ó'    , (char *)&charOUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Â'    , (char *)&charAUCirc    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Ê'    , (char *)&charEUCirc    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Ô'    , (char *)&charOUCirc    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Ú'    , (char *)&charUUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    //{ 'ï¿½'    , charAlrFilled , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charAlrEmpty  , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charNTilde    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charATilde    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charOTilde    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charCCidille  , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charAAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charAGrv      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charEAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charIAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charOAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charACirc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charECirc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charOCirc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charUAcc      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charNUTilde   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charAUTilde   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charOUTilde   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charCUCidille , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charAUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//	  { 'ï¿½'    , (char *)&charAUGrv     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { 'ï¿½'    , (char *)&charEUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charIUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charOUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charAUCirc    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charEUCirc    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charOUCirc    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charUUAcc     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
 //    { '$'    , (char *)&charPLup      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { '¢'    , (char *)&charPLdown    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'ü'    , (char *)&charRLopen    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { '£'    , (char *)&charRLclose   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'ð'    , (char *)&charArrowDown , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+208
-//    { 'ÿ'    , (char *)&charArrowUp   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { '¥'    , (char *)&charArrowLeft , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { '·'    , (char *)&charArrowRight, CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+250 
-//    { '¬'    , (char *)&charNumber    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,    
+//    { 'ï¿½'    , (char *)&charPLdown    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charRLopen    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charRLclose   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charArrowDown , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+208
+//    { 'ï¿½'    , (char *)&charArrowUp   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charArrowLeft , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charArrowRight, CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+250 
+//    { 'ï¿½'    , (char *)&charNumber    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,    
 //    { '~'    , (char *)&charWaves     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'þ'    , (char *)&charBlock     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , 
-//    { 'å'    , (char *)&charAsubs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+134 
-//    { 'ß'    , (char *)&charBsubs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+225 
-//    { '©'    , (char *)&charCsubs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+169
-//    { 'œ'    , (char *)&charNsubs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Ý'    , (char *)&charHrmSGroup , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+237
-//    { 'ý'    , (char *)&charHrmGroup  , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+236
-//    { 'Å'    , (char *)&charAngle     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { '°'    , (char *)&charDegree    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'º'    , (char *)&charOrdinal   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-//    { 'Þ'    , (char *)&charUpDown    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+232    
-//    { 'ï'    , (char *)&char0subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+139 	
-//    { 'î'    , (char *)&char1subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+140
-//    { 'ì'    , (char *)&char2subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+141 
-//    { 'Ä'    , (char *)&char3subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+142
-////     { 'Æ'    , char4subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+146
-////     { 'û'    , char5subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+150
-////     { 'ù'    , char6subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+151
-////     { '¡'    , char7subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+173
-////     { '×'    , char8subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+158
-////     { '®'    , char9subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+169
-//    { 'ø'    , (char *)&charPhi       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+155
-//    { '¹'	 , (char *)&charSep1		 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+155
-//    { '²'	 , (char *)&charSep2		 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+157
-//    { 'æ'	 , (char *)&charInfo		 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+145
-//    { '¿'	 , (char *)&charEnter	 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+168
-//    { '®'	 , (char *)&charDelta	 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+169
-//    { '½'	 , (char *)&charLt 	 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+171
-//    { '¼'	 , (char *)&charGt 	 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+172    
+//    { 'ï¿½'    , (char *)&charBlock     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , 
+//    { 'ï¿½'    , (char *)&charAsubs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+134 
+//    { 'ï¿½'    , (char *)&charBsubs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+225 
+//    { 'ï¿½'    , (char *)&charCsubs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , // Alt+169
+//    { 'ï¿½'    , (char *)&charNsubs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charHrmSGroup , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+237
+//    { 'ï¿½'    , (char *)&charHrmGroup  , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+236
+//    { 'ï¿½'    , (char *)&charAngle     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charDegree    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charOrdinal   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+//    { 'ï¿½'    , (char *)&charUpDown    , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+232    
+//    { 'ï¿½'    , (char *)&char0subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+139 	
+//    { 'ï¿½'    , (char *)&char1subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+140
+//    { 'ï¿½'    , (char *)&char2subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+141 
+//    { 'ï¿½'    , (char *)&char3subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+142
+////     { 'ï¿½'    , char4subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+146
+////     { 'ï¿½'    , char5subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+150
+////     { 'ï¿½'    , char6subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+151
+////     { 'ï¿½'    , char7subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+173
+////     { 'ï¿½'    , char8subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+158
+////     { 'ï¿½'    , char9subs     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+169
+//    { 'ï¿½'    , (char *)&charPhi       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+155
+//    { 'ï¿½'	 , (char *)&charSep1		 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+155
+//    { 'ï¿½'	 , (char *)&charSep2		 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+157
+//    { 'ï¿½'	 , (char *)&charInfo		 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+145
+//    { 'ï¿½'	 , (char *)&charEnter	 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+168
+//    { 'ï¿½'	 , (char *)&charDelta	 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+169
+//    { 'ï¿½'	 , (char *)&charLt 	 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+171
+//    { 'ï¿½'	 , (char *)&charGt 	 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+172    
 //    { CH_HALF_BLACK_HEX	 , (char *)&charHalfBlack , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , 
 //    { CH_HGLASS_1_HEX	 , (char *)&charHourglass1 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , 
 //    { CH_HGLASS_2_HEX	 , (char *)&charHourglass2 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , 
 //    { CH_HGLASS_3_HEX	 , (char *)&charHourglass3 , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , 
-//    { '¨'           	 , (char *)&charApprox     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , 
-//    { '¦'                , (char *)&charBar34      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+176
-//    { '¡'                , (char *)&charBar3       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+173
-//    { '«'                , (char *)&charBar12      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+174
-//    { '»'                , (char *)&charBar1       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+175		
-//    { 'Æ'    , (char *)&charCircleFilled       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+146
-//    { 'û'     , (char *)&charCircleEmpty       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+150
-//    { 'è' , (char *)&charAlarmDisabled , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED }, // Alt+208
-//    { 'È' , (char *)&charAlarmReset , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED }, // Alt+208
-//	{ 'Ù' , (char *)&charEsubs , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED },
-//	{ 'ù' , (char *)&charIsubs , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED },
-//	{ 'Ü' , (char *)&charPsubs , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED },
-//	{ 'Ë' , (char *)&charOsubs , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED },
+//    { 'ï¿½'           	 , (char *)&charApprox     , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , 
+//    { 'ï¿½'                , (char *)&charBar34      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+176
+//    { 'ï¿½'                , (char *)&charBar3       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+173
+//    { 'ï¿½'                , (char *)&charBar12      , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+174
+//    { 'ï¿½'                , (char *)&charBar1       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+175		
+//    { 'ï¿½'    , (char *)&charCircleFilled       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+146
+//    { 'ï¿½'     , (char *)&charCircleEmpty       , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } , //Alt+150
+//    { 'ï¿½' , (char *)&charAlarmDisabled , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED }, // Alt+208
+//    { 'ï¿½' , (char *)&charAlarmReset , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED }, // Alt+208
+//	{ 'ï¿½' , (char *)&charEsubs , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED },
+//	{ 'ï¿½' , (char *)&charIsubs , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED },
+//	{ 'ï¿½' , (char *)&charPsubs , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED },
+//	{ 'ï¿½' , (char *)&charOsubs , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED },
     
 };    
 

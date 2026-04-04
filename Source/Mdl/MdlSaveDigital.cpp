@@ -11,12 +11,12 @@
  * \date      30/04/2021
  ***********************************************************************************************/
 #include "stm32f4xx_hal.h"
-#include "Main.h"
+#include "main.h"
 #include "Modo0.h"
 #include "MdlSaveDigital.h"
 #include <stdio.h>
 #include <string.h>
-#include "Mdlsensor.h"
+#include "MdlSensor.h"
 #include "File_Handling.h"
 #include "usb_host.h"
 #include "usbh_core.h"

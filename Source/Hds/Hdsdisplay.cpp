@@ -18,7 +18,7 @@
 
 #endif
 #include "InventTypes.h"
-#include "HdsDisplay.h"
+#include "Hdsdisplay.h"
 #include <stdio.h>
 #include <string.h>
 #include "HdsGpio.h"

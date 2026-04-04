@@ -10,7 +10,7 @@
  * \date      30/04/2021
  ***********************************************************************************************/
 #include "MdlLcd.h"
-#include "HdsLcd.h"
+#include "hdsLcd.h"
 #include <stdio.h>
 #include <string.h>
 
