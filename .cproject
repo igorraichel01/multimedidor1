@@ -1,51 +1,235 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
-	<storageModule moduleId="org.eclipse.cdt.core.settings">
-		<cconfiguration id="0.1970803274">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.1970803274" moduleId="org.eclipse.cdt.core.settings" name="Default">
-				<externalSettings/>
-				<extensions>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildProperties="" description="" id="0.1970803274" name="Default" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=" parent="org.eclipse.cdt.build.core.prefbase.cfg">
-					<folderInfo id="0.1970803274." name="/" resourcePath="">
-						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.454572652" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
-							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.454572652.1550066141" name=""/>
-							<builder id="org.eclipse.cdt.build.core.settings.default.builder.2128272542" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.177796299" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1788291034" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
-								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1455304017" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-							</tool>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.485019249" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
-								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.321503058" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-							</tool>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1685368580" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
-								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.438932043" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-	</storageModule>
-	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="multicronometro_usb.null.988711324" name="multicronometro_usb"/>
-	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="0.1970803274">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
-	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+<storageModule moduleId="org.eclipse.cdt.core.settings">
+<cconfiguration id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.debug.1523987822">
+<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.debug.1523987822" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+<externalSettings/>
+<extensions>
+<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+</extensions>
+</storageModule>
+<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="${cross_rm} -rf" description="Debug build" id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.debug.1523987822" name="Debug" parent="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.debug">
+<folderInfo id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.debug.1523987822." name="/" resourcePath="">
+<toolChain id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.292576990" name="MCU ARM GCC" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base">
+<option id="com.st.stm32cube.ide.mcu.option.internal.toolchain.type.1823874521" name="Internal Toolchain Type" superClass="com.st.stm32cube.ide.mcu.option.internal.toolchain.type" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain" valueType="string"/>
+<option id="com.st.stm32cube.ide.mcu.option.internal.toolchain.version.1654908524" name="Internal Toolchain Version" superClass="com.st.stm32cube.ide.mcu.option.internal.toolchain.version" useByScannerDiscovery="false" value="" valueType="string"/>
+<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.targetPlatform.1928657091" isAbstract="false" osList="all" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.targetPlatform"/>
+<builder buildPath="${workspace_loc:/${ProjName}/Debug}" id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.builder.1827615791" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="MCU ARM GCC Builder" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.builder"/>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.642516987" name="MCU GCC Assembler" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.option.debuglevel.2074929939" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.option.debuglevel.g" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.option.assembler.flags.1984362748" name="Assembler flags" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.option.assembler.flags" useByScannerDiscovery="false" value="-mcpu=cortex-m4 -g3 -c -x assembler-with-cpp --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb" valueType="string"/>
+<inputType id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.input.1258048499" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.input"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.1234567890" name="MCU GCC Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.debuglevel.1234567891" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.debuglevel.g3" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.optimization.level.1234567892" name="Optimization level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.optimization.level.none" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.definedsymbols.1234567893" name="Define symbols (-D)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.definedsymbols" useByScannerDiscovery="false" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="USE_HAL_DRIVER"/>
+<listOptionValue builtIn="false" value="STM32F401xC"/>
+<listOptionValue builtIn="false" value="DEBUG"/>
+</option>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.includepaths.1234567894" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
+<listOptionValue builtIn="false" value="../Core/Inc"/>
+<listOptionValue builtIn="false" value="../Drivers/STM32F4xx_HAL_Driver/Inc"/>
+<listOptionValue builtIn="false" value="../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+<listOptionValue builtIn="false" value="../Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
+<listOptionValue builtIn="false" value="../Source"/>
+<listOptionValue builtIn="false" value="../Source/Includes"/>
+<listOptionValue builtIn="false" value="../Source/cidepe"/>
+<listOptionValue builtIn="false" value="../FATFS/Target"/>
+<listOptionValue builtIn="false" value="../FATFS/App"/>
+<listOptionValue builtIn="false" value="../USB_HOST/App"/>
+<listOptionValue builtIn="false" value="../USB_HOST/Target"/>
+<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FatFs/src"/>
+<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Host_Library/Core/Inc"/>
+<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc"/>
+</option>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.flags.1234567895" name="Other flags" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.flags" useByScannerDiscovery="false" value="-mcpu=cortex-m4 --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -ffunction-sections -fdata-sections -Wall -fstack-usage" valueType="string"/>
+<inputType id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.input.1234567896" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.input"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.1234567900" name="MCU G++ Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.debuglevel.1234567901" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.debuglevel.g3" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.optimization.level.1234567902" name="Optimization level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.optimization.level.none" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.definedsymbols.1234567903" name="Define symbols (-D)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.definedsymbols" useByScannerDiscovery="false" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="USE_HAL_DRIVER"/>
+<listOptionValue builtIn="false" value="STM32F401xC"/>
+<listOptionValue builtIn="false" value="DEBUG"/>
+</option>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.includepaths.1234567904" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
+<listOptionValue builtIn="false" value="../Core/Inc"/>
+<listOptionValue builtIn="false" value="../Drivers/STM32F4xx_HAL_Driver/Inc"/>
+<listOptionValue builtIn="false" value="../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+<listOptionValue builtIn="false" value="../Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
+<listOptionValue builtIn="false" value="../Source"/>
+<listOptionValue builtIn="false" value="../Source/Includes"/>
+<listOptionValue builtIn="false" value="../Source/cidepe"/>
+<listOptionValue builtIn="false" value="../FATFS/Target"/>
+<listOptionValue builtIn="false" value="../FATFS/App"/>
+<listOptionValue builtIn="false" value="../USB_HOST/App"/>
+<listOptionValue builtIn="false" value="../USB_HOST/Target"/>
+<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FatFs/src"/>
+<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Host_Library/Core/Inc"/>
+<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc"/>
+</option>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.flags.1234567905" name="Other flags" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.flags" useByScannerDiscovery="false" value="-mcpu=cortex-m4 --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -Wall -fstack-usage" valueType="string"/>
+<inputType id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.input.1234567906" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.input"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.1234567910" name="MCU GCC Linker" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.option.script.1234567911" name="Linker Script (-T)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.option.script" useByScannerDiscovery="false" value="../STM32F401CCUx_FLASH.ld" valueType="string"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.option.flags.1234567912" name="Other flags" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.option.flags" useByScannerDiscovery="false" value="-mcpu=cortex-m4 --specs=nosys.specs -specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,-Map=${ProjName}.map -Wl,--gc-sections -static -Wl,--start-group -lc -lm -Wl,--end-group" valueType="string"/>
+<inputType id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.input.1234567913" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.input"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex.1234567920" name="MCU GCC Create Flash Image" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex.option.outputformat.1234567921" name="Output file format (-O)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex.option.outputformat" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex.option.outputformat.ihex" valueType="enumerated"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary.1234567930" name="MCU GCC Create Binary Image" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary.option.outputformat.1234567931" name="Output file format (-O)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary.option.outputformat" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary.option.outputformat.binary" valueType="enumerated"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.size.1234567940" name="MCU GCC Print Size" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.size"/>
+</toolChain>
+</folderInfo>
+<sourceEntries>
+<entry excluding="HEX_FILE|MDK-ARM|Source/Hds/Retarget.c|Source/cidepe/main.COF|Source/cidepe/main.ERR|Source/cidepe/main.ESYM|Source/cidepe/main.HEX|Source/cidepe/main.LST|Source/cidepe/main.PJT|Source/cidepe/main.SYM|Source/cidepe/documentacaoEstados" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+</sourceEntries>
+</configuration>
+</storageModule>
+<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+</cconfiguration>
+<cconfiguration id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.release.1523987823">
+<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.release.1523987823" moduleId="org.eclipse.cdt.core.settings" name="Release">
+<externalSettings/>
+<extensions>
+<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+</extensions>
+</storageModule>
+<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="${cross_rm} -rf" description="Release build" id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.release.1523987823" name="Release" parent="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.release">
+<folderInfo id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.release.1523987823." name="/" resourcePath="">
+<toolChain id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.292576991" name="MCU ARM GCC" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base">
+<option id="com.st.stm32cube.ide.mcu.option.internal.toolchain.type.1823874522" name="Internal Toolchain Type" superClass="com.st.stm32cube.ide.mcu.option.internal.toolchain.type" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain" valueType="string"/>
+<option id="com.st.stm32cube.ide.mcu.option.internal.toolchain.version.1654908525" name="Internal Toolchain Version" superClass="com.st.stm32cube.ide.mcu.option.internal.toolchain.version" useByScannerDiscovery="false" value="" valueType="string"/>
+<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.targetPlatform.1928657092" isAbstract="false" osList="all" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.targetPlatform"/>
+<builder buildPath="${workspace_loc:/${ProjName}/Release}" id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.builder.1827615792" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="MCU ARM GCC Builder" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.base.builder"/>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.642516988" name="MCU GCC Assembler" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.option.debuglevel.2074929940" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.option.debuglevel.none" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.option.assembler.flags.1984362749" name="Assembler flags" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.option.assembler.flags" useByScannerDiscovery="false" value="-mcpu=cortex-m4 -c -x assembler-with-cpp --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb" valueType="string"/>
+<inputType id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.input.1258048500" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.assembler.input"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.2234567890" name="MCU GCC Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.debuglevel.2234567891" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.debuglevel.none" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.optimization.level.2234567892" name="Optimization level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.optimization.level.s" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.definedsymbols.2234567893" name="Define symbols (-D)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.definedsymbols" useByScannerDiscovery="false" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="USE_HAL_DRIVER"/>
+<listOptionValue builtIn="false" value="STM32F401xC"/>
+</option>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.includepaths.2234567894" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
+<listOptionValue builtIn="false" value="../Core/Inc"/>
+<listOptionValue builtIn="false" value="../Drivers/STM32F4xx_HAL_Driver/Inc"/>
+<listOptionValue builtIn="false" value="../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+<listOptionValue builtIn="false" value="../Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
+<listOptionValue builtIn="false" value="../Source"/>
+<listOptionValue builtIn="false" value="../Source/Includes"/>
+<listOptionValue builtIn="false" value="../Source/cidepe"/>
+<listOptionValue builtIn="false" value="../FATFS/Target"/>
+<listOptionValue builtIn="false" value="../FATFS/App"/>
+<listOptionValue builtIn="false" value="../USB_HOST/App"/>
+<listOptionValue builtIn="false" value="../USB_HOST/Target"/>
+<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FatFs/src"/>
+<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Host_Library/Core/Inc"/>
+<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc"/>
+</option>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.flags.2234567895" name="Other flags" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.option.flags" useByScannerDiscovery="false" value="-mcpu=cortex-m4 --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -ffunction-sections -fdata-sections -Wall -fstack-usage" valueType="string"/>
+<inputType id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.input.2234567896" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.c.compiler.input"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.2234567900" name="MCU G++ Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.debuglevel.2234567901" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.debuglevel" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.debuglevel.none" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.optimization.level.2234567902" name="Optimization level" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.optimization.level.s" valueType="enumerated"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.definedsymbols.2234567903" name="Define symbols (-D)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.definedsymbols" useByScannerDiscovery="false" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="USE_HAL_DRIVER"/>
+<listOptionValue builtIn="false" value="STM32F401xC"/>
+</option>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.includepaths.2234567904" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
+<listOptionValue builtIn="false" value="../Core/Inc"/>
+<listOptionValue builtIn="false" value="../Drivers/STM32F4xx_HAL_Driver/Inc"/>
+<listOptionValue builtIn="false" value="../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy"/>
+<listOptionValue builtIn="false" value="../Drivers/CMSIS/Device/ST/STM32F4xx/Include"/>
+<listOptionValue builtIn="false" value="../Drivers/CMSIS/Include"/>
+<listOptionValue builtIn="false" value="../Source"/>
+<listOptionValue builtIn="false" value="../Source/Includes"/>
+<listOptionValue builtIn="false" value="../Source/cidepe"/>
+<listOptionValue builtIn="false" value="../FATFS/Target"/>
+<listOptionValue builtIn="false" value="../FATFS/App"/>
+<listOptionValue builtIn="false" value="../USB_HOST/App"/>
+<listOptionValue builtIn="false" value="../USB_HOST/Target"/>
+<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FatFs/src"/>
+<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Host_Library/Core/Inc"/>
+<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc"/>
+</option>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.flags.2234567905" name="Other flags" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.option.flags" useByScannerDiscovery="false" value="-mcpu=cortex-m4 --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -Wall -fstack-usage" valueType="string"/>
+<inputType id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.input.2234567906" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.compiler.input"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.2234567910" name="MCU GCC Linker" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.option.script.2234567911" name="Linker Script (-T)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.option.script" useByScannerDiscovery="false" value="../STM32F401CCUx_FLASH.ld" valueType="string"/>
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.option.flags.2234567912" name="Other flags" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.option.flags" useByScannerDiscovery="false" value="-mcpu=cortex-m4 --specs=nosys.specs --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,-Map=${ProjName}.map -Wl,--gc-sections -static -Wl,--start-group -lc -lm -Wl,--end-group" valueType="string"/>
+<inputType id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.input.2234567913" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.cpp.linker.input"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex.2234567920" name="MCU GCC Create Flash Image" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex.option.outputformat.2234567921" name="Output file format (-O)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex.option.outputformat" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.hex.option.outputformat.ihex" valueType="enumerated"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary.2234567930" name="MCU GCC Create Binary Image" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary">
+<option id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary.option.outputformat.2234567931" name="Output file format (-O)" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary.option.outputformat" useByScannerDiscovery="false" value="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.objcopy.binary.option.outputformat.binary" valueType="enumerated"/>
+</tool>
+<tool id="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.size.2234567940" name="MCU GCC Print Size" superClass="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.size"/>
+</toolChain>
+</folderInfo>
+<sourceEntries>
+<entry excluding="HEX_FILE|MDK-ARM|Source/Hds/Retarget.c|Source/cidepe/main.COF|Source/cidepe/main.ERR|Source/cidepe/main.ESYM|Source/cidepe/main.HEX|Source/cidepe/main.LST|Source/cidepe/main.PJT|Source/cidepe/main.SYM|Source/cidepe/documentacaoEstados" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+</sourceEntries>
+</configuration>
+</storageModule>
+<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+</cconfiguration>
+</storageModule>
+<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<project id="MulticronometroUsb.com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.988711324" name="MulticronometroUsb"/>
+</storageModule>
+<storageModule moduleId="scannerConfiguration">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+<scannerConfigBuildInfo instanceId="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.debug.1523987822">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.GCCManagedMakePerProjectProfileC"/>
+</scannerConfigBuildInfo>
+<scannerConfigBuildInfo instanceId="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.release.1523987823">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain.GCCManagedMakePerProjectProfileC"/>
+</scannerConfigBuildInfo>
+</storageModule>
+<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+<storageModule moduleId="refreshScope" versionNumber="2">
+<configuration configurationName="Debug">
+<resource resourceType="PROJECT" workspacePath="/MulticronometroUsb"/>
+</configuration>
+<configuration configurationName="Release">
+<resource resourceType="PROJECT" workspacePath="/MulticronometroUsb"/>
+</configuration>
+</storageModule>
+<storageModule moduleId="com.st.stm32cube.ide.mcu.MCUProjectStorageModule" toolchain="com.st.stm32cube.ide.mcu.gnu.cross.arm.toolchain">
+<MCUInfo>
+<ClockSource value="HSE 8MHz Crystal"/>
+<MCUName value="STM32F401CCUx"/>
+</MCUInfo>
+</storageModule>
+<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>
