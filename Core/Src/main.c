@@ -121,8 +121,8 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
  //   HAL_UART_Transmit(&huart1, (uint8_t *)"teste ", 6, HAL_MAX_DELAY);
-   App.Init();
-   App.Run(); 
+   App_Init();
+   App_Run();
 
   }
   /* USER CODE END 3 */

@@ -7,10 +7,10 @@
  *\brief     Codigo de aplicacao, interface com usuario, hardware 
  * 
  * ----------------------------------------------------------------------------------------------
- * \version   1.00 - Primeira versão documentada
+ * \version   1.00 - Primeira versï¿½o documentada
  * \date      16/10/2016
  * ----------------------------------------------------------------------------------------------
- * \version   1.01 - Primeira versão liberada para certificação
+ * \version   1.01 - Primeira versï¿½o liberada para certificaï¿½ï¿½o
  * \date      16/10/2016
  * ----------------------------------------------------------------------------------------------
  
@@ -54,35 +54,35 @@ altear stm32f4xx_i.c para cpp
 
 
 
-Alterações
-22 /09 /2022  alterado a media das leituras de aritimética para exponencial com contatnes diferentes para digital e analógico
-              Corrigido o processo de ajuste da temperatura, permite faixas intermediárias.
+Alteraï¿½ï¿½es
+22 /09 /2022  alterado a media das leituras de aritimï¿½tica para exponencial com contatnes diferentes para digital e analï¿½gico
+              Corrigido o processo de ajuste da temperatura, permite faixas intermediï¿½rias.
 22 /09 /2022
-vx.4         incluido ajuste de pressão e correção do cursor no inicio do ajuste
+vx.4         incluido ajuste de pressï¿½o e correï¿½ï¿½o do cursor no inicio do ajuste
 
-vx.5  incluído salvamento dos sensores digitais
+vx.5  incluï¿½do salvamento dos sensores digitais
       corrigido alguns travametnos do programa
-      corrigido a indicação do teste dos sensores  
+      corrigido a indicaï¿½ï¿½o do teste dos sensores  
 
 
 
- restaurar calibração de fabrica no menu cal ( ultima posição) restaura de todos ao mesmo tempo
-ocorreu de não aparecer o menu cal apos selecionar o modo analogico 
+ restaurar calibraï¿½ï¿½o de fabrica no menu cal ( ultima posiï¿½ï¿½o) restaura de todos ao mesmo tempo
+ocorreu de nï¿½o aparecer o menu cal apos selecionar o modo analogico 
 corrigir funcoes f7 e f8 
-função f3 nao as vezes não pega as 10 passadas ( regua em queda livre)
+funï¿½ï¿½o f3 nao as vezes nï¿½o pega as 10 passadas ( regua em queda livre)
 
 
 
 
 sensor                      Calib       salv dados calib        arquivo pendrive
-FORÇA                       ok           ok                      ok
-Pressão dif                 ok           ok                      ok
+FORï¿½A                       ok           ok                      ok
+Pressï¿½o dif                 ok           ok                      ok
 Luminosidade                                                     ok
-Tensão                       ok           ok                     ok
+Tensï¿½o                       ok           ok                     ok
 magnetico                   ok           ok                   
 Fluxo                        ok           ok                   
 
-luminosidade o valor vai até 5000. não conseguimos realizar o ajuste.
+luminosidade o valor vai atï¿½ 5000. nï¿½o conseguimos realizar o ajuste.
 
  ************************************************************************************************/
 
@@ -111,15 +111,20 @@ luminosidade o valor vai até 5000. não conseguimos realizar o ajuste.
 
 
 
-//! Declara a classe que controla a aplicação
+//! Declara a classe que controla a aplicaï¿½ï¿½o
 TApplicationLL App;
+
+extern "C" {
+  void App_Init(void) { App.Init(); }
+  void App_Run(void)  { App.Run();  }
+}
 
 
 /*********************************************************************************************//**
  * \brief Init
  * \param  nenhum
  * \details
- *  Dispara o inicio das temporizaçoes do software, faz algumas inicializações
+ *  Dispara o inicio das temporizaï¿½oes do software, faz algumas inicializaï¿½ï¿½es
  *************************************************************************************************/
 void TApplicationLL::Init(void)
 {
@@ -134,15 +139,15 @@ void TApplicationLL::Init(void)
 	
 	Ensaio.Init();
 
-   _bTestPowerUp=true;  //Sinaliza borda de descida do botão 
+   _bTestPowerUp=true;  //Sinaliza borda de descida do botï¿½o 
 
 
    FlashStm32.Init();
 
-   //!Recupera calibração da flash 
+   //!Recupera calibraï¿½ï¿½o da flash 
    Calib.Restore();
 
-   //! Verifica se tem valores válidos para a calibração
+   //! Verifica se tem valores vï¿½lidos para a calibraï¿½ï¿½o
    Calib.Validate(false); 
  
 	 
@@ -150,7 +155,7 @@ void TApplicationLL::Init(void)
 
 /*********************************************************************************************//**
  * \brief   Stopf
- * \details Interrompe a aplicação, chamada após a detecção de uma queda de energia
+ * \details Interrompe a aplicaï¿½ï¿½o, chamada apï¿½s a detecï¿½ï¿½o de uma queda de energia
  *************************************************************************************************/
 void TApplicationLL::Stop(void)
 {
@@ -159,14 +164,14 @@ void TApplicationLL::Stop(void)
 #include "HdsLCD.h"
 /*********************************************************************************************//**
  * \brief   Run
- * \details Laço eterno de execucao das tarefas do medidor com eventos em 
+ * \details Laï¿½o eterno de execucao das tarefas do medidor com eventos em 
  *          escalas de 5ms, 10ms, 100ms e 1 seg de tempo.
- *          A execução é continua para os niveis de tensão adequados
+ *          A execuï¿½ï¿½o ï¿½ continua para os niveis de tensï¿½o adequados
  *************************************************************************************************/
 void TApplicationLL::Run(void)
 {
 
-  //! Inicia o laço de execução
+  //! Inicia o laï¿½o de execuï¿½ï¿½o
   while (1)
   {
 
@@ -174,7 +179,7 @@ void TApplicationLL::Run(void)
      MX_USB_HOST_Process();  
 
 
-    //! Inicia ações conforme temporizacao
+    //! Inicia aï¿½ï¿½es conforme temporizacao
     //! Eventos a cada 5ms
     if (TimeEvents.Event5ms())
     {
@@ -230,7 +235,7 @@ void TApplicationLL::_Run5msInterfaceEvents(void)
 
 /*********************************************************************************************//**
  * \brief   _Run10msInterfaceEevents
- * \details Funcoes de execução conforme evento de 10ms associado
+ * \details Funcoes de execuï¿½ï¿½o conforme evento de 10ms associado
  *************************************************************************************************/
 void TApplicationLL::_Run10msInterfaceEvents(void)
 {
@@ -280,7 +285,7 @@ void TApplicationLL::_Run100msInterfaceEvents(void)
 
 /*********************************************************************************************//**
  * \brief   _Run1sInterfaceEevents
- * \details Funcoes de execução conforme evento de 1 segundo associado
+ * \details Funcoes de execuï¿½ï¿½o conforme evento de 1 segundo associado
  *************************************************************************************************/
 void TApplicationLL::_Run1sInterfaceEvents(void)
 {
