@@ -1,7 +1,0 @@
-Source/cidepe/Fluxo.c:49:6:void isr_default()	0	static
-Source/cidepe/Fluxo.c:54:6:void startTimer()	0	static
-Source/cidepe/Fluxo.c:70:6:void stopTimer()	0	static
-Source/cidepe/Fluxo.c:78:6:void modo0_zera_valores()	8	static
-Source/cidepe/Fluxo.c:106:6:void int_sensores()	8	static
-Source/cidepe/Fluxo.c:189:6:void int_sensorS0(bool)	16	static
-Source/cidepe/Fluxo.c:367:6:void clock1_isr()	0	static

@@ -1,7 +1,0 @@
-Source/Application.cpp:124:6:void TApplicationLL::Init()	8	static
-Source/Application.cpp:155:6:void TApplicationLL::Stop()	0	static
-Source/Application.cpp:222:6:void TApplicationLL::_Run5msInterfaceEvents()	8	static
-Source/Application.cpp:235:6:void TApplicationLL::_Run10msInterfaceEvents()	8	static
-Source/Application.cpp:265:6:void TApplicationLL::_Run100msInterfaceEvents()	8	static
-Source/Application.cpp:285:6:void TApplicationLL::_Run1sInterfaceEvents()	8	static
-Source/Application.cpp:166:6:void TApplicationLL::Run()	8	static

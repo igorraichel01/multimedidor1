@@ -1,0 +1,13 @@
+# Build output directories
+Debug/
+Release/
+
+# Keil uVision build artifacts
+MDK-ARM/*.axf
+MDK-ARM/*.htm
+MDK-ARM/*.lnp
+MDK-ARM/*.map
+MDK-ARM/*.sct
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/
+MDK-ARM/EventRecorderStub.scvd

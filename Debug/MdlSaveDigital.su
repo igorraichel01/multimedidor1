@@ -1,5 +1,0 @@
-Source/Mdl/MdlSaveDigital.cpp:56:6:bool C_SaveDigital::SaveFunc1(uint8_t, bool)	256	static
-Source/Mdl/MdlSaveDigital.cpp:159:6:bool C_SaveDigital::SaveFunc2(bool, int16)	304	static
-Source/Mdl/MdlSaveDigital.cpp:273:6:bool C_SaveDigital::SaveFunc3_10(int16)	264	static
-Source/Mdl/MdlSaveDigital.cpp:330:6:bool C_SaveDigital::SaveFunc4_6(int16)	264	static
-Source/Mdl/MdlSaveDigital.cpp:416:6:bool C_SaveDigital::SaveFunc7_8(int16)	376	static

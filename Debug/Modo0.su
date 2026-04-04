@@ -1,5 +1,0 @@
-Source/cidepe/Modo0.c:76:6:bool EstadoModo0(int16)	16	static
-Source/cidepe/Modo0.c:772:6:bool EstadoModo1(int16)	8	static
-Source/cidepe/Modo0.c:1180:6:void modo2_escreveTempo_1(int16)	8	static
-Source/cidepe/Modo0.c:1209:6:void modo2_escreveFreq_1(int16)	8	static
-Source/cidepe/Modo0.c:1242:6:bool EstadoModo2(int16)	16	static

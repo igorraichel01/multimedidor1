@@ -1,7 +1,0 @@
-Source/Hds/HdsGpio.cpp:125:6:void C_Gpio::Write(GPIO_TypeDef*, uint16_t, EPortState)	0	static
-Source/Hds/HdsGpio.cpp:147:6:bool C_Gpio::Read(GPIO_TypeDef*, uint16_t)	0	static
-Source/Hds/HdsGpio.cpp:172:6:void C_Gpio::Toggle(GPIO_TypeDef*, uint16_t)	0	static
-Source/Hds/HdsGpio.cpp:194:10:uint16_t C_Gpio::GetPinNumber(uint16_t)	0	static
-Source/Hds/HdsGpio.cpp:96:6:void C_Gpio::GpioCfg(GPIO_TypeDef*, uint16_t, EPortResistor, EPortmode, EPortOut, EPortSpeed)	16	static
-Source/Hds/HdsGpio.cpp:66:6:void C_Gpio::_ConfigPin()	40	static
-Source/Hds/HdsGpio.cpp:28:6:void C_Gpio::Init()	24	static
