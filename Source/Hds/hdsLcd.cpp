@@ -125,7 +125,7 @@ void LCD_WriteNibble(unsigned char input, bool command) {
 void lcdHwInit(void) {
     /* English does not require a special-character lookup table, but the LCD
      * should default to the Portuguese table whenever the table is still empty. */
-    if (lcdSpecialCharCount == 0U && LCD_GetLanguage() != LCD_LANGUAGE_ENGLISH) {
+    if (lcdSpecialCharCount == 0U) {
         LCD_SetLanguage(LCD_LANGUAGE_PORTUGUESE);
     }
 

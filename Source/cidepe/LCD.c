@@ -13,24 +13,14 @@
 
 #define LCD_CUSTOM_CHAR_MASK 0x07U
 
-static BYTE lcd_normaliza_linha(BYTE y)
+static BYTE lcd_normalize_line(BYTE y)
 {
-    if (y == 2)
-    {
-        return LCD_LINHA_2;
-    }
-
-    if (y > 2)
-    {
-        return LCD_LINHA_1;
-    }
-
-    return y;
+    return (y == LCD_LINHA_2 || y == 2) ? LCD_LINHA_2 : LCD_LINHA_1;
 }
 
 static char lcd_get_char(BYTE x, BYTE y)
 {
-    BYTE linha = lcd_normaliza_linha(y);
+    BYTE linha = lcd_normalize_line(y);
 
     if (x == 0 || x > LCD_NUM_COLUNAS)
     {
@@ -70,7 +60,7 @@ void lcd_init()
 /////////////// posiciona cursor //////////////////////
 void lcd_posicaoxy( BYTE x, BYTE y)
  {
-  BYTE linha = lcd_normaliza_linha(y);
+  BYTE linha = lcd_normalize_line(y);
   Lcd.Setxy( x-1,linha);
 }
 

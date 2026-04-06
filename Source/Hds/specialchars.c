@@ -324,7 +324,7 @@ CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 };
 
-const char charUUDieresis[CHAR_HEIGHT] =  {
+const char charUDieresis[CHAR_HEIGHT] =  {
 CONCAT(  _X_ , ___ , _X_ , ___ , _X_    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  _X_ , ___ , ___ , ___ , _X_    )   ,
@@ -335,7 +335,7 @@ CONCAT(  ___ , _X_ , _X_ , _X_ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 };
 
-const char charuUDieresis[CHAR_HEIGHT] =  {
+const char charuDieresis[CHAR_HEIGHT] =  {
 CONCAT(  _X_ , ___ , _X_ , ___ , _X_    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
@@ -1017,9 +1017,10 @@ CONCAT(  ___ , ___ , ___ , ___ , ___    )   ,
 
 
 #define LCD_SPECIAL_CHAR_CAPACITY  24
+#define LCD_DEFAULT_LANGUAGE LCD_LANGUAGE_PORTUGUESE
 
 unsigned char lcdCGRamCount = 0;
-static uint8_t lcdCurrentLanguage = LCD_LANGUAGE_PORTUGUESE;
+static uint8_t lcdCurrentLanguage = LCD_DEFAULT_LANGUAGE;
 
 static const sSpecialChar lcdSpecialCharsPortuguese[] =
 {
@@ -1051,13 +1052,13 @@ static const sSpecialChar lcdSpecialCharsSpanish[] =
     { LCD_CHAR_I_ACUTE        , (char *)&charIAcc               , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
     { LCD_CHAR_O_ACUTE        , (char *)&charOAcc               , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
     { LCD_CHAR_U_ACUTE        , (char *)&charUAcc               , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { LCD_CHAR_U_DIAERESIS    , (char *)&charUUDieresis         , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { LCD_CHAR_U_DIAERESIS    , (char *)&charUDieresis          , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
     { LCD_CHAR_a_ACUTE        , (char *)&charAUAcc              , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
     { LCD_CHAR_e_ACUTE        , (char *)&charEUAcc              , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
     { LCD_CHAR_i_ACUTE        , (char *)&charIUAcc              , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
     { LCD_CHAR_o_ACUTE        , (char *)&charOUAcc              , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
     { LCD_CHAR_u_ACUTE        , (char *)&charUUAcc              , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
-    { LCD_CHAR_u_DIAERESIS    , (char *)&charuUDieresis         , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
+    { LCD_CHAR_u_DIAERESIS    , (char *)&charuDieresis          , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
     { LCD_CHAR_INVERTED_QMARK , (char *)&charInvertedQuestion   , CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED } ,
     { LCD_CHAR_INVERTED_EMARK , (char *)&charInvertedExclamation, CGRAM_NO_ADDR , SPECIAL_CHAR_UNUSED }
 };
