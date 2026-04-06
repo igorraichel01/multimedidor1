@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define LCD_CUSTOM_CHAR_MASK 0x07U
+
 static BYTE lcd_normaliza_linha(BYTE y)
 {
     if (y == 2)
@@ -59,7 +61,7 @@ void lcd_send_byte( BYTE address, BYTE n )
 ////////////// inicializa LCD //////////////////////////
 void lcd_init()
  {
-    LCD_SetLanguage(LCD_LANGUAGE_PORTUGUESE);
+    lcd_set_language(LCD_IDIOMA_PORTUGUES);
     Lcd.Init();
     Lcd.Update();
 }
@@ -730,7 +732,7 @@ void lcd_load_custom_char(BYTE posicao, const BYTE mapa[8])
 
 void lcd_write_custom_char(BYTE posicao)
 {
-    lcd_send_byte(1, posicao & 0x07);
+    lcd_send_byte(1, posicao & LCD_CUSTOM_CHAR_MASK);
 }
 
 //###########################################################################

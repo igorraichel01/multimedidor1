@@ -1107,7 +1107,7 @@ static void LCD_CopyLanguageTable(const sSpecialChar *pTable, unsigned int uiCou
         uiCount = LCD_SPECIAL_CHAR_CAPACITY;
     }
 
-    if (pTable != NULL && uiCount > 0U)
+    if (pTable != NULL && uiCount > 0)
     {
         memcpy(lcdSpecialChars, pTable, sizeof(sSpecialChar) * uiCount);
     }
