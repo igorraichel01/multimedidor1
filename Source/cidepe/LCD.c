@@ -1,53 +1,82 @@
 ///////////////////////////////////////////////////////////////////////////
 ////                             LCD.H                                 ////
 ////                 Driver para modulo LCD ITM1602                    ////
-////         Define funções para inicializar, movimentar,              ////
+////         Define funï¿½ï¿½es para inicializar, movimentar,              ////
 ////                escrever e ler caracteres.						   ////	
 ///////////////////////////////////////////////////////////////////////////  
 
 #include "lcd.h"
+#include "HdsLCD.h"
 #include "MdlLcd.h"
 #include <stdio.h>
 #include <string.h>
 
-
-///////////////////// instruções de baixo nível
-
-
-void lcd_send_nibble( BYTE n ) 
+static BYTE lcd_normaliza_linha(BYTE y)
 {
+    if (y == 2)
+    {
+        return LCD_LINHA_2;
+    }
 
+    if (y > LCD_LINHA_2)
+    {
+        return LCD_LINHA_1;
+    }
+
+    return y;
+}
+
+static char lcd_get_char(BYTE x, BYTE y)
+{
+    BYTE linha = lcd_normaliza_linha(y);
+
+    if (x == 0 || x > LCD_NUM_COLUNAS)
+    {
+        return ' ';
+    }
+
+    return lcdVirtualScreen[linha][x - 1];
+}
+
+///////////////////// instruï¿½ï¿½es de baixo nï¿½vel
+
+
+void lcd_send_nibble( BYTE n )
+{
+    LCD_WriteNibble((unsigned char)n, LCD_CHAR);
 }
 
 void lcd_send_byte( BYTE address, BYTE n )
  {
-
- 
+    LCD_WriteByte((unsigned char)n, address == 0 ? LCD_COMMAND : LCD_CHAR);
 }
 
 
 
-/////////////////////////////FUNÇÕES//////////////////////////////
+/////////////////////////////FUNï¿½ï¿½ES//////////////////////////////
 
 
 ////////////// inicializa LCD //////////////////////////
 void lcd_init()
  {
-   
+    LCD_SetLanguage(LCD_LANGUAGE_PORTUGUESE);
+    Lcd.Init();
+    Lcd.Update();
 }
 
 
 /////////////// posiciona cursor //////////////////////
 void lcd_posicaoxy( BYTE x, BYTE y)
  {
-  Lcd.Setxy( x-1,y);
+  BYTE linha = lcd_normaliza_linha(y);
+  Lcd.Setxy( x-1,linha);
 }
 
 
 
 int lcd_getdigito( BYTE x, BYTE y) 
 {
-   char value;
+   char value = lcd_get_char(x, y);
 	int digito;
 
 //    lcd_posicaoxy(x,y);
@@ -108,8 +137,11 @@ void lcd_escreve( char *c)
 ///////////limpa LCD///////////////////
 void lcd_limpa()           
 {
-   lcd_send_byte(0,1);
-    
+   LCD_ClearScreen();
+   Lcd.Write(LCD_LINHA_1, (char *)"");
+   Lcd.Write(LCD_LINHA_2, (char *)"");
+   Lcd.Setxy(0, LCD_LINHA_1);
+   Lcd.Update();
 }
 
 /////////// posiciona na linha 2///////////////////
@@ -126,7 +158,7 @@ void lcd_linha1()
 	 lcd_posicaoxy(1,LCD_LINHA_1);
 }
 
-/////////// escreve um dígito de tempo ///////////////////
+/////////// escreve um dï¿½gito de tempo ///////////////////
 void lcd_escreve_digito(int digito)          
 {
 
@@ -675,6 +707,37 @@ void lcd_cursorBlack(int _posCursor)
 	lcd_posicaoxy(_posCursor,LCD_LINHA_2);
 }
 
-//###########################################################################
-//###########################################################################
+void lcd_update(void)
+{
+    Lcd.Update();
+}
 
+void lcd_set_language(BYTE idioma)
+{
+    LCD_SetLanguage(idioma);
+    LCD_ClearCGRAM();
+    Lcd.Update();
+}
+
+BYTE lcd_get_language(void)
+{
+    return (BYTE)LCD_GetLanguage();
+}
+
+void lcd_load_custom_char(BYTE posicao, const BYTE mapa[8])
+{
+    if (mapa == NULL)
+    {
+        return;
+    }
+
+    LCD_LoadCustomChar(posicao, (const char *)mapa);
+}
+
+void lcd_write_custom_char(BYTE posicao)
+{
+    lcd_send_byte(1, posicao & 0x07);
+}
+
+//###########################################################################
+//###########################################################################

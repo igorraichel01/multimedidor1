@@ -31,8 +31,8 @@ enum { LCD_BKL_CTRL ,
         LCD_MAX_CTRL } ;
 
 		
-  #define LCD_LINE_SIZE          ( 16  ) + 1     /*!< Número máximo caracteres em uma linha  */        
-  #define LCD_LINE_COUNT          ( 2 )         /*!< Número de linhas definidas para cada tela  */   
+  #define LCD_LINE_SIZE          ( 16  ) + 1     /*!< Nï¿½mero mï¿½ximo caracteres em uma linha  */
+  #define LCD_LINE_COUNT          ( 2 )         /*!< Nï¿½mero de linhas definidas para cada tela  */
 	#define LCD_LINE_1      ( 0x80 )
 	#define LCD_LINE_2      ( 0xC0 )
 	#define LCD_LINE_3      ( 0x94 )
@@ -42,7 +42,7 @@ enum { LCD_BKL_CTRL ,
 #define LCD_NO_CURSOR           ( 0xff )
 
 
-// posições de bits de controle >>>>>>>>>>>>>>>>>>>>>>>>>>
+// posiï¿½ï¿½es de bits de controle >>>>>>>>>>>>>>>>>>>>>>>>>>
 #define LCD_CTRL_GRP_FUNCTIONS       5
 #define LCD_CTRL_IDX_INTERFACE       4
 #define LCD_CTRL_IDX_LINHAS          3
@@ -72,29 +72,29 @@ enum { LCD_BKL_CTRL ,
 #define LCD_SHIFT_DISPLAY  1
 
 
-// configurações DEFAULT do LCD    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-#define LCD_CONFIG_INTERFACE        (  0  )  /*!< Configuração de interface (1 = 8bits 0 = 4bits)   */
-#define LCD_CONFIG_LINHAS           (  1  )  /*!< Configuração de linhas (1 = 2 linhas  | 0 = 1 linha)   */
-#define LCD_CONFIG_PIXELS           (  0  )  /*!< Configuração de pixels (1 = 5x10  | 0 = 5x7 )   */
+// configuraï¿½ï¿½es DEFAULT do LCD    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#define LCD_CONFIG_INTERFACE        (  0  )  /*!< Configuraï¿½ï¿½o de interface (1 = 8bits 0 = 4bits)   */
+#define LCD_CONFIG_LINHAS           (  1  )  /*!< Configuraï¿½ï¿½o de linhas (1 = 2 linhas  | 0 = 1 linha)   */
+#define LCD_CONFIG_PIXELS           (  0  )  /*!< Configuraï¿½ï¿½o de pixels (1 = 5x10  | 0 = 5x7 )   */
 
 
-#define LCD_CONFIG_DISPLAY          (  1  ) /*!< Configuração de display (1 = ON  | 0 = OFF)   */
-#define LCD_CONFIG_CURSOR           (  0  ) /*!< Configuração de cursor (1 = ON  | 0 = OFF)   */
-#define LCD_CONFIG_BLINK_CURSOR     (  1  ) /*!< Configuração de pisca cursor (1 = ON  | 0 = OFF)   */
+#define LCD_CONFIG_DISPLAY          (  1  ) /*!< Configuraï¿½ï¿½o de display (1 = ON  | 0 = OFF)   */
+#define LCD_CONFIG_CURSOR           (  0  ) /*!< Configuraï¿½ï¿½o de cursor (1 = ON  | 0 = OFF)   */
+#define LCD_CONFIG_BLINK_CURSOR     (  1  ) /*!< Configuraï¿½ï¿½o de pisca cursor (1 = ON  | 0 = OFF)   */
 
 #define LCD_CONFIG_CURSOR_DIR       (  1  ) /*!< Deslocamento de cursor (1 = esq->dir  | 0 = dir->esq)   */
-#define LCD_CONFIG_SCROLL           (  0  ) /*!< Função scroll          (1 = ON  | 0 = OFF)   */
+#define LCD_CONFIG_SCROLL           (  0  ) /*!< Funï¿½ï¿½o scroll          (1 = ON  | 0 = OFF)   */
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
-// máscaras de configuração default:
+// mï¿½scaras de configuraï¿½ï¿½o default:
 #define LCD_CONFIG_GRP_FUNCTIONS    (1 << LCD_CTRL_GRP_FUNCTIONS) | ( LCD_CONFIG_INTERFACE << LCD_CTRL_IDX_INTERFACE) | (LCD_CONFIG_LINHAS << LCD_CTRL_IDX_LINHAS) | (LCD_CONFIG_PIXELS << LCD_CTRL_IDX_LINHAS)
 #define LCD_CONFIG_GRP_DISPLAY      (1 << LCD_CTRL_GRP_DISPLAY) | ( LCD_CONFIG_DISPLAY      << LCD_CTRL_IDX_DISPLAY ) | ( LCD_CONFIG_CURSOR << LCD_CTRL_IDX_CURSOR ) |  ( LCD_CONFIG_BLINK_CURSOR << LCD_CTRL_IDX_BLINK_CURSOR )
 #define LCD_CONFIG_GRP_CURSOR       ( 1 << LCD_CTRL_GRP_CURSOR) | (LCD_CONFIG_CURSOR_DIR << LCD_CTRL_IDX_CURSOR_DIR) | (LCD_CONFIG_SCROLL << LCD_CTRL_IDX_SCROLL)
 #define LCD_CONFIG_CLEAR    ( 0x01 ) 
 
 
-// máscaras para outras configurações:
+// mï¿½scaras para outras configuraï¿½ï¿½es:
 #define LCD_CONFIG_GRP_CURSOR_ON             (1 << LCD_CTRL_GRP_DISPLAY) | ( LCD_CONFIG_DISPLAY      << LCD_CTRL_IDX_DISPLAY    ) | ( LCD_CURSOR_ON << LCD_CTRL_IDX_CURSOR ) |  ( LCD_CONFIG_BLINK_CURSOR << LCD_CTRL_IDX_BLINK_CURSOR )
 #define LCD_CONFIG_GRP_CURSOR_OFF            (1 << LCD_CTRL_GRP_DISPLAY) | ( LCD_CONFIG_DISPLAY      << LCD_CTRL_IDX_DISPLAY    ) | ( LCD_CURSOR_OFF << LCD_CTRL_IDX_CURSOR ) |  ( LCD_CONFIG_BLINK_CURSOR << LCD_CTRL_IDX_BLINK_CURSOR )
 #define LCD_CONFIG_GRP_CURSOR_GO_RIGHT       ( 1 << LCD_CTRL_GRP_MOVING  | (LCD_SHIFT_CURSOR         << LCD_CTRL_IDX_SHIFT_WHAT ) | ( LCD_CURSOR_RIGHT << LCD_CTRL_IDX_SHIFT_DIR  ) )
@@ -105,9 +105,17 @@ enum { LCD_BKL_CTRL ,
 
 extern char lcdVirtualScreen[LCD_LINE_COUNT][LCD_LINE_SIZE-1];
 
+typedef enum
+{
+    LCD_LANGUAGE_PORTUGUESE = 0,
+    LCD_LANGUAGE_ENGLISH    = 1,
+    LCD_LANGUAGE_SPANISH    = 2
+} ELcdLanguage;
 
 
 
+
+void  LCD_WriteNibble( unsigned char input , bool command );
 void  LCD_WriteByte( unsigned char input , bool command );
 void  lcdHwInit( void );
 void LCD_DelayUs(uint32_t ulValue);
@@ -130,6 +138,7 @@ void LCD_CheckChars( void );
 void LCD_PutCursor( unsigned short usRelPos );
 void LCD_ClearCursor( void );
 void LCD_WriteCGRam( unsigned short usPos , const char * deff );
+void LCD_LoadCustomChar( unsigned short usPos , const char * deff );
 char LCD_OperateChar ( char input );
 bool LCD_IsBackLightOn( void );
 void LCD_BackLightOn ( bool val );
@@ -139,7 +148,7 @@ void LCD_SetCursorPosition( unsigned short value );
 unsigned char LCD_GetCursorPosition( void );
 
 
-// definição de tipo special char usado internamente
+// definiï¿½ï¿½o de tipo special char usado internamente
 typedef struct sSpecialChar
 {
     unsigned char ascii;
@@ -148,10 +157,18 @@ typedef struct sSpecialChar
     unsigned char usedFlag;
 } sSpecialChar;
 
-#define CH_BLACK_HEX 'þ'
-#define CH_HALF_BLACK_HEX '³' /* 179 */
-#define CH_HGLASS_1_HEX  '¶' /* 182 */
-#define CH_HGLASS_2_HEX  '¯'  /* 175 */
+extern sSpecialChar lcdSpecialChars[];
+extern unsigned int lcdSpecialCharCount;
+extern unsigned char lcdCGRamCount;
+extern sSpecialChar * lcdUsedSpecialChars[ CGRAM_SIZE ];
+
+void LCD_SetLanguage(uint8_t ucLanguage);
+uint8_t LCD_GetLanguage(void);
+
+#define CH_BLACK_HEX 'ï¿½'
+#define CH_HALF_BLACK_HEX 'ï¿½' /* 179 */
+#define CH_HGLASS_1_HEX  'ï¿½' /* 182 */
+#define CH_HGLASS_2_HEX  'ï¿½'  /* 175 */
 #define CH_HGLASS_3_HEX  '' /* 155 */
 
 

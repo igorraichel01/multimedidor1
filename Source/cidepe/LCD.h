@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////
 ////                             LCD.H                                 ////
 ////                 Driver para modulo LCD ITM1602                    ////
-////         Define funções para inicializar, movimentar,              ////
+////         Define funï¿½ï¿½es para inicializar, movimentar,              ////
 ////                escrever e ler caracteres.						   ////	
 ///////////////////////////////////////////////////////////////////////////  
 
@@ -13,15 +13,21 @@
 
 
 
-///////////////////// instruções de baixo nível
+///////////////////// instruï¿½ï¿½es de baixo nï¿½vel
 
 
 void lcd_send_nibble( BYTE n ); 
 
 void lcd_send_byte( BYTE address, BYTE n );
 
-/////////////////////////////FUNÇÕES//////////////////////////////
+/////////////////////////////FUNï¿½ï¿½ES//////////////////////////////
 
+typedef enum
+{
+    LCD_IDIOMA_PORTUGUES = 0,
+    LCD_IDIOMA_INGLES    = 1,
+    LCD_IDIOMA_ESPANHOL  = 2
+} lcd_idioma_t;
 
 ////////////// inicializa LCD //////////////////////////
 void lcd_init(void);
@@ -36,7 +42,7 @@ void lcd_limpa(void);
 void lcd_linha2(void);          
 /////////// posiciona na linha 1///////////////////
 void lcd_linha1(void);          
-/////////// escreve um dígito de tempo ///////////////////
+/////////// escreve um dï¿½gito de tempo ///////////////////
 void lcd_escreve_digito(int digito);          
 long lcd_getDistancia(void);
 //Funcao especifica para receber o valor de massa - F12 - Energia cinetica
@@ -55,6 +61,10 @@ int lcd_desloca_H_massa(int posCursor, int _setaH);
 void lcd_atualiza_Dist(unsigned int _setaV, int posCursor);
 void lcd_atualiza_Massa(unsigned int _setaV, int posCursor);
 void lcd_cursorBlack(int _posCursor);
+void lcd_update(void);
+void lcd_set_language(BYTE idioma);
+BYTE lcd_get_language(void);
+void lcd_load_custom_char(BYTE posicao, const BYTE mapa[8]);
+void lcd_write_custom_char(BYTE posicao);
 
 #endif 
-

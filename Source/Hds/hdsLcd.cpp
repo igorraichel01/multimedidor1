@@ -44,7 +44,7 @@ static sPort hLCDData[LCD_NUM_BITS] = {/*{LcdD0},{LcdD1},{LcdD2},{LcdD3},*/{ Lcd
 
 /*********************************************************************************************//**
  * \fn         LCD_DelayUs
- * \details    Função de delay para o LCD
+ * \details    Funï¿½ï¿½o de delay para o LCD
                Ajustada para ter um delay de 1us a 84Mhz
 
  * \author     
@@ -99,6 +99,15 @@ static void LCD_SetData(uint8_t byte) {
 
 }
 
+void LCD_WriteNibble(unsigned char input, bool command) {
+    LCD_ConfigBus(eGPIOOutput);
+
+    LCD_SetCtrl(LcdRw, ePortLow);
+    LCD_SetCtrl(LcdRs, command == LCD_COMMAND ? ePortLow : ePortHigh);
+    LCD_SetData(input & 0x0F);
+    LCD_DelayUs(10);
+}
+
 /******************************************************  ***********************
  *   lcdHwInit
  *****************************************************************************/
@@ -115,6 +124,10 @@ static void LCD_SetData(uint8_t byte) {
  *
  *****************************************************************************/
 void lcdHwInit(void) {
+    if (lcdSpecialCharCount == 0U && LCD_GetLanguage() != LCD_LANGUAGE_ENGLISH) {
+        LCD_SetLanguage(LCD_LANGUAGE_PORTUGUESE);
+    }
+
     //configura pinos de Dados
     LCD_ConfigBus(eGPIOOutput);
 
@@ -203,10 +216,10 @@ void LCD_WriteByte(unsigned char input, bool command) {
 /*!
  * @ingroup nome
  *
- * @brief  descrição breve
+ * @brief  descriï¿½ï¿½o breve
  *
  *
- * @param[n]   descrição do parâmetro n
+ * @param[n]   descriï¿½ï¿½o do parï¿½metro n
  *
  * @return  valor de retorno
  *
@@ -241,10 +254,10 @@ unsigned char LCD_MakePosCommand(unsigned short usPos, unsigned short usLine) {
  *
  * @brief  escreve uma string (char *) no LCD
  *
- *    Põe todos os caracteres de pcDisplay na tela até tamanho ucSize
+ *    Pï¿½e todos os caracteres de pcDisplay na tela atï¿½ tamanho ucSize
  *
  *
- * @param[usPos]   posição inicial
+ * @param[usPos]   posiï¿½ï¿½o inicial
  * @param[usLine]   linha
  * @param[ucSize]   Tamanho da string
  * @param[pcDisplay]   Vetor de caracteres a ser mostrado
@@ -273,10 +286,10 @@ void LCD_WriteString(unsigned short usPos, unsigned short usLine, unsigned char 
  *
  * @brief  escreve uma "smart" string (char * terminado com '\0') no LCD
  *
- *    Põe todos os caracteres de pcDisplay na tela até encontrar um '\0' (fim de string)
+ *    Pï¿½e todos os caracteres de pcDisplay na tela atï¿½ encontrar um '\0' (fim de string)
  *
  *
- * @param[usPos]   posição inicial
+ * @param[usPos]   posiï¿½ï¿½o inicial
  * @param[usLine]   linha
  * @param[pcDisplay]   Vetor de caracteres a ser mostrado
  *
@@ -326,12 +339,12 @@ void LCD_WriteDumbString(unsigned short usPos, unsigned short usLine, const char
 /*!
  * @ingroup lcd
  *
- * @brief  escreve uma string a partir das posições usPos e usLine com word break e retorna o ponto de parada do LCD
+ * @brief  escreve uma string a partir das posiï¿½ï¿½es usPos e usLine com word break e retorna o ponto de parada do LCD
  *
  *
  *
- * @param[usPos]   posição inicial
- * @param[usLine]   linha virtual de início
+ * @param[usPos]   posiï¿½ï¿½o inicial
+ * @param[usLine]   linha virtual de inï¿½cio
  * @param[string]   Vetor de caracteres a ser mostrado
  *
  * @return  se existem mais linhas abaixo para serem exibidas
@@ -421,9 +434,9 @@ bool LCD_WriteWordBreakString(unsigned short usPos, unsigned short usLine, const
 /*!
  * @ingroup lcd
  *
- * @brief  limpa todos os espaços CGRAM
+ * @brief  limpa todos os espaï¿½os CGRAM
  *
- *    Limpa todos os espaços CGRAM. Utilizado quando for escrita uma tela do zero.
+ *    Limpa todos os espaï¿½os CGRAM. Utilizado quando for escrita uma tela do zero.
  *
  *
  *
@@ -451,9 +464,9 @@ void LCD_ClearCGRAM(void) {
 /*!
  * @ingroup lcd
  *
- * @brief  limpa os espaços não usados da CGRAM
+ * @brief  limpa os espaï¿½os nï¿½o usados da CGRAM
  *
- *    Limpa os espaços não usados da CGRAM. Utilizado apenas quando for atualizar os valores da tela. (lcdPutMaskedScreen)
+ *    Limpa os espaï¿½os nï¿½o usados da CGRAM. Utilizado apenas quando for atualizar os valores da tela. (lcdPutMaskedScreen)
  *
  *
  *
@@ -481,7 +494,7 @@ void LCD_ClearUnusedCGRAM(void) {
  *
  * @brief  limpa a tela
  *
- *    limpa o lcd ( Atenção: extremamente lento (~1.5ms) )
+ *    limpa o lcd ( Atenï¿½ï¿½o: extremamente lento (~1.5ms) )
  *
  *
  *
@@ -531,7 +544,7 @@ void LCD_HoldWhileBusy(void) {
 
     /* Verificado em debug que os picos de timeout ficam em torno de 100. Desta
      * forma, fazemos 5*pico para garantir casos de LCDs mais lentos.
-     * No pior dos casos o LCD não mostra algum caracter, melhor do que travar. */
+     * No pior dos casos o LCD nï¿½o mostra algum caracter, melhor do que travar. */
     timeout = 0;
 }
 
@@ -580,7 +593,7 @@ void LCD_CheckChars(void) {
  *
  * @brief  escreve caracteres especiais na CGRAM
  *
- * @param[usPos]  posição X inicial no LCD
+ * @param[usPos]  posiï¿½ï¿½o X inicial no LCD
  * @param[usLine]  linha inicial no LCD*
  *
  * @return  None
@@ -598,17 +611,25 @@ void LCD_WriteCGRam(unsigned short usPos, const char *deff) {
     LCD_WriteByte(previousPosition, LCD_COMMAND); // put back cursor in old position
 }
 
+void LCD_LoadCustomChar(unsigned short usPos, const char *deff) {
+    if (usPos >= CGRAM_SIZE || deff == NULL) {
+        return;
+    }
+
+    LCD_WriteCGRam(usPos, deff);
+}
+
 /*****************************************************************************
  *   LCD_OperateChar
  *****************************************************************************/
 /*!
  * @ingroup lcd
  *
- * @brief  opera caractere de entrada e retorna a transformação para código CGRAm se necessário
+ * @brief  opera caractere de entrada e retorna a transformaï¿½ï¿½o para cï¿½digo CGRAm se necessï¿½rio
  *
  * @param[input]  caractere a ser operado
  *
- * @return  caractere transformado em endereço reconhecido pela CGRAm
+ * @return  caractere transformado em endereï¿½o reconhecido pela CGRAm
  *
  *****************************************************************************/
 char LCD_OperateChar(char input) {
@@ -618,7 +639,7 @@ char LCD_OperateChar(char input) {
 #if HAS_LCD_DISPLAY
     // Copia o caractere para o buffer virtual
     *lcdVirtualCursor++ = input;
-    if (!( /* eliminar caracteres mais usados da verificação para performance! */
+    if (!( /* eliminar caracteres mais usados da verificaï¿½ï¿½o para performance! */
     // INT_BETWEEN(input , 'a' , 'z') ||
     //INT_BETWEEN( input, 'A', 'Z' ) ||
     //INT_BETWEEN( input, '0', '9' ) ||
@@ -669,12 +690,12 @@ char LCD_OperateChar(char input) {
 /*!
  * @ingroup lcd
  *
- * @brief  Calcula a posição absoluta do cursor dada sua posição na DDRAM
+ * @brief  Calcula a posiï¿½ï¿½o absoluta do cursor dada sua posiï¿½ï¿½o na DDRAM
  *
  *
- * @param[value]  Posição na DDRAM
+ * @param[value]  Posiï¿½ï¿½o na DDRAM
  *
- * @return  Posição absoluta
+ * @return  Posiï¿½ï¿½o absoluta
  *
  *****************************************************************************/
 int LCD_CalcAbsolutePosition(int value) {
@@ -720,12 +741,12 @@ void LCD_ClearCursor(void) {
 /*!
  * @ingroup lcd
  *
- * @brief  escreve os registradores para mostrar um cursor na posição desejada
+ * @brief  escreve os registradores para mostrar um cursor na posiï¿½ï¿½o desejada
  *
- *    escreve os registradores para mostrar um cursor na posição desejada
+ *    escreve os registradores para mostrar um cursor na posiï¿½ï¿½o desejada
  *
  *
- * @param[usRelPos]  posição relativa ( para a esquerda ) para mover o cursors
+ * @param[usRelPos]  posiï¿½ï¿½o relativa ( para a esquerda ) para mover o cursors
  *
  *****************************************************************************/
 void LCD_PutCursor(unsigned short usRelPos) {
@@ -746,4 +767,3 @@ void LCD_SetCursorPosition(unsigned short value) {
 unsigned char LCD_GetCursorPosition(void) {
     return lcdCursorPosition;
 }
-
