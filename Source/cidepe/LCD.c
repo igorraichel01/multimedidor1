@@ -79,12 +79,6 @@ int lcd_getdigito( BYTE x, BYTE y)
    char value = lcd_get_char(x, y);
 	int digito;
 
-//    lcd_posicaoxy(x,y);
-//    while ( bit_test(lcd_read_byte(),7) ); // wait until busy flag is low
-//    lcd.rs=1;
-//    value = lcd_read_byte();
-//    lcd.rs=0;
-
 	switch (value) {
 
 	    case '0':
@@ -712,7 +706,7 @@ void lcd_update(void)
     Lcd.Update();
 }
 
-void lcd_set_language(BYTE idioma)
+void lcd_set_language(lcd_idioma_t idioma)
 {
     LCD_SetLanguage(idioma);
     LCD_ClearCGRAM();

@@ -62,7 +62,7 @@ void lcd_atualiza_Dist(unsigned int _setaV, int posCursor);
 void lcd_atualiza_Massa(unsigned int _setaV, int posCursor);
 void lcd_cursorBlack(int _posCursor);
 void lcd_update(void);
-void lcd_set_language(BYTE idioma);
+void lcd_set_language(lcd_idioma_t idioma);
 BYTE lcd_get_language(void);
 void lcd_load_custom_char(BYTE posicao, const BYTE mapa[8]);
 void lcd_write_custom_char(BYTE posicao);
