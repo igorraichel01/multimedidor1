@@ -5,6 +5,7 @@
 #define __HDS_LCD__
 
 #include "InventTypes.h"
+#include "specialchars.h"
 
 
 #define bool  uint8_t 

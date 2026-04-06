@@ -2104,6 +2104,11 @@
               <FilePath>..\Source\Hds\hdsLcd.cpp</FilePath>
             </File>
             <File>
+              <FileName>specialchars.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Source\Hds\specialchars.c</FilePath>
+            </File>
+            <File>
               <FileName>HdsMux.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Source\Hds\HdsMux.cpp</FilePath>

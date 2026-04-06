@@ -15,20 +15,6 @@
 #include "HdsLCD.h"
 #include <string.h>
 
-#define _X_ 1
-#define ___ 0
-#define CONCAT( b4,b3,b2,b1,b0 )  b4 << 4 | b3 << 3 | b2 << 2 | b1 << 1  | b0
-
-#define CHAR_HEIGHT 8 
-#define CGRAM_SIZE 8
-#define CGRAM_START_ADDR 0x40
-#define CGRAM_NO_ADDR 0xFF
-
-#define SPECIAL_CHAR_UNUSED  0x00
-#define SPECIAL_CHAR_USED    0x01
-
-#define HAS_LCD_DISPLAY  1
-
 #if HAS_LCD_DISPLAY
 const char charAlarmDisabled[CHAR_HEIGHT] =  {               //�
 CONCAT(  _X_ , _X_ , _X_ , _X_ , _X_    )   ,

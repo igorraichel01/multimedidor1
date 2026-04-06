@@ -20,7 +20,7 @@ static BYTE lcd_normaliza_linha(BYTE y)
         return LCD_LINHA_2;
     }
 
-    if (y > LCD_LINHA_2)
+    if (y > 2)
     {
         return LCD_LINHA_1;
     }
