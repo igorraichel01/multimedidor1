@@ -89,6 +89,23 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+  /*-----------------------------------------------------------------------
+   * LATCH DE ENERGIA IMEDIATO - PA3 (PowerON) = HIGH
+   * Deve ser a PRIMEIRA coisa apos HAL_Init() para garantir que a placa
+   * fique ligada mesmo se alguma inicializacao posterior falhar.
+   * Gpio.Init() em App.Init() ira re-configurar PA3 depois, sem problema.
+   *-----------------------------------------------------------------------*/
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  {
+    GPIO_InitTypeDef gpio = {0};
+    gpio.Pin   = GPIO_PIN_3;            /* PA3 = PowerON  */
+    gpio.Mode  = GPIO_MODE_OUTPUT_PP;
+    gpio.Pull  = GPIO_PULLUP;
+    gpio.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOA, &gpio);
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_SET);  /* Mantem ligado */
+  }
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -357,10 +374,25 @@ void MX_GPIO_InterruptInit(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
+  /* Garante que a placa permanece ligada mesmo em erro */
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3, GPIO_PIN_SET);  /* PA3 PowerON HIGH */
+
+  /* Pisca o LED (PB3) para indicar erro */
+  {
+    GPIO_InitTypeDef gpio = {0};
+    gpio.Pin   = GPIO_PIN_3;
+    gpio.Mode  = GPIO_MODE_OUTPUT_OD;
+    gpio.Pull  = GPIO_PULLUP;
+    gpio.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOB, &gpio);
+  }
+
   while (1)
   {
+    HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_3);  /* Led pisca = erro */
+    HAL_Delay(200);
   }
   /* USER CODE END Error_Handler_Debug */
 }
