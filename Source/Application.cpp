@@ -7,10 +7,10 @@
  *\brief     Codigo de aplicacao, interface com usuario, hardware 
  * 
  * ----------------------------------------------------------------------------------------------
- * \version   1.00 - Primeira versão documentada
+ * \version   1.00 - Primeira versï¿½o documentada
  * \date      16/10/2016
  * ----------------------------------------------------------------------------------------------
- * \version   1.01 - Primeira versão liberada para certificação
+ * \version   1.01 - Primeira versï¿½o liberada para certificaï¿½ï¿½o
  * \date      16/10/2016
  * ----------------------------------------------------------------------------------------------
  
@@ -54,35 +54,35 @@ altear stm32f4xx_i.c para cpp
 
 
 
-Alterações
-22 /09 /2022  alterado a media das leituras de aritimética para exponencial com contatnes diferentes para digital e analógico
-              Corrigido o processo de ajuste da temperatura, permite faixas intermediárias.
+Alteraï¿½ï¿½es
+22 /09 /2022  alterado a media das leituras de aritimï¿½tica para exponencial com contatnes diferentes para digital e analï¿½gico
+              Corrigido o processo de ajuste da temperatura, permite faixas intermediï¿½rias.
 22 /09 /2022
-vx.4         incluido ajuste de pressão e correção do cursor no inicio do ajuste
+vx.4         incluido ajuste de pressï¿½o e correï¿½ï¿½o do cursor no inicio do ajuste
 
-vx.5  incluído salvamento dos sensores digitais
+vx.5  incluï¿½do salvamento dos sensores digitais
       corrigido alguns travametnos do programa
-      corrigido a indicação do teste dos sensores  
+      corrigido a indicaï¿½ï¿½o do teste dos sensores  
 
 
 
- restaurar calibração de fabrica no menu cal ( ultima posição) restaura de todos ao mesmo tempo
-ocorreu de não aparecer o menu cal apos selecionar o modo analogico 
+ restaurar calibraï¿½ï¿½o de fabrica no menu cal ( ultima posiï¿½ï¿½o) restaura de todos ao mesmo tempo
+ocorreu de nï¿½o aparecer o menu cal apos selecionar o modo analogico 
 corrigir funcoes f7 e f8 
-função f3 nao as vezes não pega as 10 passadas ( regua em queda livre)
+funï¿½ï¿½o f3 nao as vezes nï¿½o pega as 10 passadas ( regua em queda livre)
 
 
 
 
 sensor                      Calib       salv dados calib        arquivo pendrive
-FORÇA                       ok           ok                      ok
-Pressão dif                 ok           ok                      ok
+FORï¿½A                       ok           ok                      ok
+Pressï¿½o dif                 ok           ok                      ok
 Luminosidade                                                     ok
-Tensão                       ok           ok                     ok
+Tensï¿½o                       ok           ok                     ok
 magnetico                   ok           ok                   
 Fluxo                        ok           ok                   
 
-luminosidade o valor vai até 5000. não conseguimos realizar o ajuste.
+luminosidade o valor vai atï¿½ 5000. nï¿½o conseguimos realizar o ajuste.
 
  ************************************************************************************************/
 
@@ -109,9 +109,27 @@ luminosidade o valor vai até 5000. não conseguimos realizar o ajuste.
 #include "Main.h"
 #include "MdlCalib.h"
 
+/*=================================================================================
+ PROGRAMA BASICO - Liga o multimedidor e escreve "Ola" no display
+ 
+ Fluxo:
+   1. Gpio.Init()        -> Habilita clocks, configura pinos, PA3=HIGH (mantem ligado)
+   2. TimeEvents.Start() -> Inicia temporizacoes de 5ms/10ms/100ms/1s
+   3. Lcd.Init()          -> Inicializa o hardware do LCD 16x2
+   4. Lcd.Write(linha, texto) -> Escreve "Ola" no buffer do LCD
+   5. Loop principal       -> Lcd.Update() a cada 100ms envia buffer para o display
+ 
+ Pinos importantes:
+   PA3 (PowerON)  - Mantem a placa ligada (latch de energia)
+   PA2 (BtLiga)   - Botao liga/desliga
+   PA8  (LcdEnable), PA9 (LcdRw), PA10 (LcdRs) - Controle do LCD
+   PB12..PB15 (LcdD4..D7) - Dados do LCD (modo 4 bits)
+   PA6 (LcdOn)    - Habilita o LCD
+=================================================================================*/
 
 
-//! Declara a classe que controla a aplicação
+
+//! Declara a classe que controla a aplicaï¿½ï¿½o
 TApplicationLL App;
 
 
@@ -119,129 +137,92 @@ TApplicationLL App;
  * \brief Init
  * \param  nenhum
  * \details
- *  Dispara o inicio das temporizaçoes do software, faz algumas inicializações
+ *  Dispara o inicio das temporizaï¿½oes do software, faz algumas inicializaï¿½ï¿½es
  *************************************************************************************************/
 void TApplicationLL::Init(void)
 {
+   //! 1. Inicializa GPIO - habilita clocks e configura pinos
+   //!    Isso tambem seta PA3 (PowerON) = HIGH, mantendo a placa ligada
    Gpio.Init();
 	
-  //! Inicializa temporizacoes em software (Muxtimers)
+   //! 2. Inicializa temporizacoes em software (gera eventos de 5ms, 10ms, 100ms, 1s)
    TimeEvents.Start();
 	
-	Teclado.Init();
-	
-	Lcd.Init();
-	
-	Ensaio.Init();
+   //! 3. Inicializa o teclado (necessario para detectar o botao de desligar)
+   Teclado.Init();
 
-   _bTestPowerUp=true;  //Sinaliza borda de descida do botão 
+   //! 4. Inicializa o hardware do LCD (configura pinos, envia sequencia de init do HD44780)
+   Lcd.Init();
 
+   //! 5. Escreve "Ola!" no display - linha 0 (superior) e linha 1 (inferior)
+   Lcd.Write(0, (char*) "     Ola!       ");
+   Lcd.Write(1, (char*) " Multimedidor   ");
 
-   FlashStm32.Init();
-
-   //!Recupera calibração da flash 
-   Calib.Restore();
-
-   //! Verifica se tem valores válidos para a calibração
-   Calib.Validate(false); 
- 
-	 
+   //! Sinaliza borda de powerup (para ignorar o primeiro press do botao)
+   _bTestPowerUp = true;
 }
 
 /*********************************************************************************************//**
  * \brief   Stopf
- * \details Interrompe a aplicação, chamada após a detecção de uma queda de energia
+ * \details Interrompe a aplicaï¿½ï¿½o, chamada apï¿½s a detecï¿½ï¿½o de uma queda de energia
  *************************************************************************************************/
 void TApplicationLL::Stop(void)
 {
  
 }
-#include "HdsLCD.h"
+
 /*********************************************************************************************//**
  * \brief   Run
- * \details Laço eterno de execucao das tarefas do medidor com eventos em 
- *          escalas de 5ms, 10ms, 100ms e 1 seg de tempo.
- *          A execução é continua para os niveis de tensão adequados
+ * \details Laco principal - apenas atualiza o LCD a cada 100ms e monitora o botao de desligar
  *************************************************************************************************/
 void TApplicationLL::Run(void)
 {
 
-  //! Inicia o laço de execução
+  //! Inicia o laco de execucao
   while (1)
   {
 
-    //Monitora a entrada USB
-     MX_USB_HOST_Process();  
-
-
-    //! Inicia ações conforme temporizacao
-    //! Eventos a cada 5ms
-    if (TimeEvents.Event5ms())
-    {
-      _Run5msInterfaceEvents();
-        
-    }
-
-    //! Eventoa a cada 10ms
+    //! Eventos a cada 10ms - monitora botao de desligar
     if (TimeEvents.Event10ms())
     {
       _Run10msInterfaceEvents();
-			
-         
-        //  Gpio.Toggle(Led);
-
-					
     }
 
-    //! Eventos a cada 100ms
+    //! Eventos a cada 100ms - atualiza o LCD
     if (TimeEvents.Event100ms())
     {
       _Run100msInterfaceEvents();
-  
     } 
-
-    //! Eventos a cada 1 segundo
-    if (TimeEvents.Event1s())
-    {
-      _Run1sInterfaceEvents();
-       		
-    }
 
 	}	
 
-
-
 }
 
 
 
 /*********************************************************************************************//**
- * \brief   _Run5msInterfaceEevents
- * \details Funcoes de execucao conforme evento de 5ms associado
+ * \brief   _Run5msInterfaceEvents
+ * \details Nao utilizado neste programa basico
  *************************************************************************************************/
 void TApplicationLL::_Run5msInterfaceEvents(void)
 {
- //! Leitura do teclado
-  Teclado.TeclaReading();
-	
-	
-	
+   // Nao utilizado no programa basico
 }
 
 /*********************************************************************************************//**
- * \brief   _Run10msInterfaceEevents
- * \details Funcoes de execução conforme evento de 10ms associado
+ * \brief   _Run10msInterfaceEvents
+ * \details Monitora o botao liga/desliga para permitir desligar o equipamento
  *************************************************************************************************/
 void TApplicationLL::_Run10msInterfaceEvents(void)
 {
 static uint32_t ulcountTurnOff=0;  
 
-//monitora o pino para desligar
+//monitora o pino PA2 (BtLiga) para desligar
     if(!Gpio.Read(BtLiga)){
        
       if((++ulcountTurnOff >10) & !_bTestPowerUp ){
         
-            Gpio.Write(PowerON,ePortLow);
+            Gpio.Write(PowerON,ePortLow);  // Desliga a placa (PA3 = LOW)
     
             //!espera o pino ir para zero    
             while(!Gpio.Read(BtLiga));
@@ -259,39 +240,22 @@ static uint32_t ulcountTurnOff=0;
 
 
 /*********************************************************************************************//**
- * \brief   _Run100msInterfaceEevents
- * \details Funcoes de execucao conforme evento de 100ms associado
+ * \brief   _Run100msInterfaceEvents
+ * \details Atualiza o display LCD a cada 100ms (envia o buffer para o hardware)
  *************************************************************************************************/
 void TApplicationLL::_Run100msInterfaceEvents(void)
 {
-   //! Analise das teclas do teclado
-   Teclado.AnalisaTeclas();
-	
-   Ensaio.Run();
-
+   //! Envia o conteudo do buffer do LCD para o display fisico
    Lcd.Update();
-
-	 //EnsaioDigital.Run();
-	
-	// EnsaioAnalogico.Run();
 }
 
 
 
 /*********************************************************************************************//**
- * \brief   _Run1sInterfaceEevents
- * \details Funcoes de execução conforme evento de 1 segundo associado
+ * \brief   _Run1sInterfaceEvents
+ * \details Nao utilizado neste programa basico
  *************************************************************************************************/
 void TApplicationLL::_Run1sInterfaceEvents(void)
 {
- //executa maquinas de estado dos sensores analogicos 
-	 AnalogS0.Run();
-	 AnalogS1.Run();
-	 AnalogS2.Run();
-	 AnalogS3.Run();
-	 AnalogS4.Run();
-     
-	
+   // Nao utilizado no programa basico
 }
-
-
